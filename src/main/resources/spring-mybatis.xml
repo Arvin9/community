@@ -21,9 +21,9 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"  
         destroy-method="close">  
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
-        <property name="url" value="jdbc:mysql://115.159.86.92:3306/book" />  
-        <property name="username" value="root" />  
-        <property name="password" value="314159" />  
+        <property name="url" value="jdbc:mysql://115.159.86.92:3306/community" />  
+        <property name="username" value="community" />  
+        <property name="password" value="community" />  
         <!-- 初始化连接大小 -->  
         <property name="initialSize" value="0"></property>  
         <!-- 连接池最大数量 -->  

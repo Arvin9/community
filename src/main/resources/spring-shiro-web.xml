@@ -95,6 +95,7 @@
         </property>
         <property name="filterChainDefinitions">
             <value>
+            	/hello = anon
                 /index = anon
                 /book* = anon
                 /resources/** = anon
