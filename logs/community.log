@@ -216,4 +216,16 @@
  [DEBUG] [2016-08-06 22:43:00][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==>  Preparing: select id, sentence, add_time addTime from daily_sentence ORDER BY add_time DESC limit 1 
  [DEBUG] [2016-08-06 22:43:00][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==> Parameters: 
  [DEBUG] [2016-08-06 22:43:00][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]<==      Total: 1
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==>  Preparing: select id, sentence, add_time addTime from daily_sentence ORDER BY add_time DESC limit 1 
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==> Parameters: 
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]<==      Total: 1
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==>  Preparing: select id, sentence, add_time addTime from daily_sentence ORDER BY add_time DESC limit 1 
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==> Parameters: 
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]<==      Total: 1
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==>  Preparing: select id, sentence, add_time addTime from daily_sentence ORDER BY add_time DESC limit 1 
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==> Parameters: 
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]<==      Total: 1
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==>  Preparing: select id, sentence, add_time addTime from daily_sentence ORDER BY add_time DESC limit 1 
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]==> Parameters: 
+ [DEBUG] [2016-08-06 22:55:32][site.nebulas.dao.DailySentenceDao.getDailySentenceByParm]<==      Total: 1
  
