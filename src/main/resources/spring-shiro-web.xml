@@ -15,7 +15,7 @@
     <bean id="credentialsMatcher" class="site.nebulas.credentials.RetryLimitHashedCredentialsMatcher">
         <constructor-arg ref="cacheManager"/>
         <property name="hashAlgorithmName" value="md5"/>
-        <property name="hashIterations" value="2"/>
+        <property name="hashIterations" value="1"/>
         <property name="storedCredentialsHexEncoded" value="true"/>
     </bean>
 
@@ -78,7 +78,7 @@
 
     <!-- 基于Form表单的身份验证过滤器 -->
     <bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
-        <property name="usernameParam" value="username"/>
+        <property name="usernameParam" value="userAccount"/>
         <property name="passwordParam" value="password"/>
         <property name="loginUrl" value="/login"/>
     </bean>
@@ -95,6 +95,8 @@
         </property>
         <property name="filterChainDefinitions">
             <value>
+            	/loginIn = anon
+            	/lo = anon
             	/hello = anon
                 /index = anon
                 /book* = anon

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.nebulas.dao.UserDao">
+
+
+	<select id="findByUserAccount" resultType="User">
+		select 
+			user_id userId, 
+			role_id roleId,
+			user_account userAccount,
+			password password,
+			salt salt, 
+			real_name realName, 
+			add_time addTime,
+			is_lock isLock, 
+			add_man addMan,
+			is_delete isDelete
+		from user 
+		where user_account = #{userAccount}
+	</select>
+	<select id="findRoles" resultType="java.util.Map">
+		select 
+
+			role_id roleId
+
+		from manager 
+		where manager_account = #{managerAccount}
+	</select>
+	<select id="findPermissions" resultType="java.util.Map">
+		select 
+
+			role_id roleId
+
+		from manager 
+		where manager_account = #{managerAccount}
+	</select>
+	
+	
+	<insert id="createManager">
+		insert into manager(role_id, manager_account, password, salt, real_name, add_time, is_lock, add_man, balance, is_delete) 
+		values(#{roleId},#{managerAccount},#{password}, #{salt},#{realName},#{addTime},#{isLock},#{addMan},#{balance},#{isDelete})
+	</insert>
+	
+	<update id="update">
+		update book
+		<set>
+			<if test="bookName !=null and bookName !='' ">
+				book_name = #{bookName},
+			</if>
+			<if test="bookAuthor !=null and bookAuthor !='' ">
+				book_author = #{bookAuthor},
+			</if>
+			<if test="bookDesc !=null and bookDesc !='' ">
+				book_desc = #{bookDesc},
+			</if>
+			<if test="publishingCompany !=null and publishingCompany !='' ">
+				publishing_company = #{publishingCompany},
+			</if>
+			<if test="price !=null and price !='' ">
+				price = #{price},
+			</if>
+			<if test="publishingYear !=null and publishingYear !='' ">
+				publishing_year = #{publishingYear},
+			</if>
+			<if test="bookPic !=null and bookPic !='' ">
+				book_pic = #{bookPic},
+			</if>
+			<if test="bookURL !=null and bookURL !='' ">
+				book_url = #{bookURL},
+			</if>
+			<if test="categoryID !=null and categoryID !='' ">
+				category_id = #{categoryID},
+			</if>
+			<if test="isHot != null ">
+				is_hot = #{isHot},
+			</if>
+			<if test="isRecommend != null ">
+				is_recommend = #{isRecommend},
+			</if>
+			<if test="isTop != null ">
+				is_top = #{isTop},
+			</if>
+			<if test="updateTime !=null and updateTime !='' ">
+				update_time = #{updateTime}
+			</if>
+		</set>
+		where book_id = #{bookID}
+	</update>
+	
+	<delete id="delete">
+		delete from book
+		where book_id = #{bookID}
+	</delete>
+</mapper>

@@ -19,7 +19,7 @@ public interface UserDao {
 
     User findOne(Long userId);
 
-    User findByUsername(String username);
+    User findByUserAccount(String username);
 
     Set<String> findRoles(String username);
 

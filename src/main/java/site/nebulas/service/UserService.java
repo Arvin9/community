@@ -77,8 +77,8 @@ public class UserService {
      * @param username
      * @return
      */
-    public User findByUsername(String username) {
-        return userDao.findByUsername(username);
+    public User findByUserAccount(String username) {
+        return userDao.findByUserAccount(username);
     }
 
     /**

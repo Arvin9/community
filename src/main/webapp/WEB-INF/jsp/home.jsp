@@ -31,7 +31,7 @@
 	<body>
 		<div class="container">
 			<!-- 动态包含 -->
-			<jsp:include page="page/top.jsp"></jsp:include>
+			<jsp:include page="include/top.jsp"></jsp:include>
 
 			<div class="page-header">
 				<h1>
@@ -62,7 +62,7 @@
 
 
 			<!-- 静态包含 -->
-			<%@include file="page/foot.jsp"%>
+			<%@include file="include/foot.jsp"%>
 
 		</div>
 		<!-- /container -->
