@@ -45,17 +45,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<!-- /container -->
 	<script>
-		var message = "${message}"
-		if ("no" == message) {
-			$.messager.alert("警告", "无此用户");
-		} else if ("error" == message) {
-			$.messager.alert("警告", "密码错误");
-		}
-		function login() {
-			var password = md5($('#password').val());
-			$('#password').val(password);
-			$('#form').submit();
-		}
+	$(function(){
+		
+	});
+	var message = "${message}"
+	if ("no" == message) {
+		$.messager.alert("警告", "无此用户");
+	}else if ("error" == message) {
+		$.messager.alert("警告", "密码错误");
+	}
+	function login() {
+		var password = md5($('#password').val());
+		$('#password').val(password);
+		$('#form').submit();
+	}
+			
 	</script>	
 </body>
 </html>
