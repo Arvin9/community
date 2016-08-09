@@ -4,10 +4,10 @@
 	<a href="http://www.arvin.net.cn">Nebula</a>
 </p>
 <p>
-	<a href="http://www.w3school.com.cn/">W3school</a>&nbsp;|
+	<a href="http://www.w3school.com.cn/" target="_blank">W3school</a>	&nbsp;|
 
-	<a href="http://www.imooc.com/">imooc</a>&nbsp;|
+	<a href="http://www.imooc.com/" target="_blank">imooc</a>			&nbsp;|
 
-	<a href="http://www.bootcss.com/">Bootstrap</a>
+	<a href="http://www.bootcss.com/" target="_blank">Bootstrap</a>
 </p>
 </footer>

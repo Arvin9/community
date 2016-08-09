@@ -9,6 +9,7 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,6 +56,8 @@ public class ShiroController {
 //			HttpSession session=request.getSession();
 			//session.setAttribute("current",userAccount);
 			Subject subject = SecurityUtils.getSubject();
+			Session session = subject.getSession(); 
+			System.out.println(session.getHost());
 			try {
 				 subject.login(token);
 //				 System.out.println("用户是否是通过验证登陆："+subject.isAuthenticated());
@@ -82,11 +85,11 @@ public class ShiroController {
 	            model.addAttribute("message", "error");
 	            return "login";
 	        }  
-			return "home";
+			return "index";
 		}
-		
 		return "login";
 	}
+	
 }
 
 

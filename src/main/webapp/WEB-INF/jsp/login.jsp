@@ -7,15 +7,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
     <title>登录</title>
     <style>.error{color:red;}</style>
-    <!-- Bootstrap -->
+    
+    <script src="<%=path%>/resources/jquery/1.11.1/jquery.min.js"></script>
+	<script src="<%=path%>/resources/js/md5.min.js"></script>
 	<link href="<%=path%>/resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<%=path%>/resources/css/signin.css" rel="stylesheet">
-	<script src="<%=path%>/resources/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	
+	
 	<script src="<%=path%>/resources/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	
 	<script src="<%=path%>/resources/js/jquery.easyui.min.js"></script>
 	<script src="<%=path%>/resources/bootstrap-jquery/jquery.bootstrap.min.js"></script>
-	<script src="<%=path%>/resources/js/dropdown.js"></script>
-    <script src="<%=path%>/resources/js/md5.min.js"></script>
+	
+    
 </head>
 <body>
 
@@ -35,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						Remember me
 				</label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="button" onclick="login()">Sign in</button>
+			<a class="btn btn-lg btn-primary btn-block" onclick="login()">Sign in</a>
 		</form>
 	</div>
 	<!-- /container -->
@@ -47,11 +52,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$.messager.alert("警告", "密码错误");
 		}
 		function login() {
-			var userAccount = $('#userAccount').val();
 			var password = md5($('#password').val());
 			$('#password').val(password);
 			$('#form').submit();
-
 		}
 	</script>	
 </body>
