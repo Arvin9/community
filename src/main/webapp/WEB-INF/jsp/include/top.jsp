@@ -5,7 +5,6 @@
 <%@page import="org.apache.shiro.subject.Subject" %>
 <%@page import="org.apache.shiro.session.Session" %>
 <%@page import="java.lang.*" %>
-
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -13,26 +12,23 @@
 			+ path + "/";
 %>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-	<head>
-		<base href="<%=basePath%>">
-
-		<title>Nebula</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<head>
+	<base href="<%=basePath%>">
+	<title>Nebula</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap -->
+	<link href="${ctx}/resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${ctx}/resources/css/footer.css" rel="stylesheet">
 		
-		<!-- Bootstrap -->
-		<link href="${ctx}/resources/css/bootstrap.min.css" rel="stylesheet">
-		<link href="${ctx}/resources/css/footer.css" rel="stylesheet">
-		
-		<script src="${ctx}/resources/jquery/1.11.1/jquery.min.js"></script>
-		<script src="${ctx}/resources/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		
-	</head>
-
-	<body>
+	<script src="${ctx}/resources/jquery/1.11.1/jquery.min.js"></script>
+	<script src="${ctx}/resources/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+	<div class="container">
 		<%  
 		Subject subject = SecurityUtils.getSubject();
 		//String username = subject.getPrincipals().oneByType(String.class);
@@ -91,5 +87,3 @@
 		<!--/.container-fluid -->
 		</nav>
 
-	</body>
-</html>

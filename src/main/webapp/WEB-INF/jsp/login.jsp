@@ -8,13 +8,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>登录</title>
     <style>.error{color:red;}</style>
     
-    <script src="<%=path%>/resources/jquery/1.11.1/jquery.min.js"></script>
-	<script src="<%=path%>/resources/js/md5.min.js"></script>
+    <!-- Bootstrap -->
 	<link href="<%=path%>/resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<%=path%>/resources/css/signin.css" rel="stylesheet">
-	<!-- Bootstrap -->
 	
 	
+	<script src="<%=path%>/resources/jquery/1.11.1/jquery.min.js"></script>
+	<script src="<%=path%>/resources/js/md5.min.js"></script>
 	<script src="<%=path%>/resources/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	
 	<script src="<%=path%>/resources/js/jquery.easyui.min.js"></script>

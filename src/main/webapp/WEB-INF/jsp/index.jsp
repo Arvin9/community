@@ -1,27 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
+<%@page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<!DOCTYPE html>
-<head>
-	<base href="<%=basePath%>">
-	<title>首页</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-</head>
-
-<body>
-	<div class="container">
-		<!-- 动态包含 -->
-		<jsp:include page="include/top.jsp"></jsp:include>
+	<!-- 动态包含 -->
+	<jsp:include page="include/top.jsp"></jsp:include>
 
 		<div class="page-header">
 			<h1>
@@ -44,7 +24,7 @@
 				Our life is a movement, a tendency, a steady, ceaseless progress towards an unseen goal.
 			</p>
 			<p>
-				<a class="btn btn-lg btn-primary" href="<%=path%>/contact" role="button">Contact me &raquo;</a>
+				<a class="btn btn-lg btn-primary" href="${ctx}/contact" role="button">Contact me &raquo;</a>
 			</p>
 		</div>
 		
