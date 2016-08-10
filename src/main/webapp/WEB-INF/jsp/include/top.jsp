@@ -53,7 +53,7 @@
 						<a href="${ctx}/index">首页</a>
 					</li>
 					<li>
-						<a href="http://www.nebulas.site">Blog</a>
+						<a href="${ctx}/exercises">练习册</a>
 					</li>
 					<li>
 						<a href="${ctx}/about">About</a>

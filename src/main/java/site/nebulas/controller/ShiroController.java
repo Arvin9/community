@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 import site.nebulas.beans.User;
 import site.nebulas.service.UserService;
 
@@ -34,22 +33,13 @@ public class ShiroController {
 	UserService userService;
 	
 
-	@RequestMapping("index")
-	public ModelAndView index(){
-		ModelAndView modelAndView = new ModelAndView("index");
-		return modelAndView;
-	}
-	@RequestMapping("login")
-	public ModelAndView login(){
-		ModelAndView modelAndView = new ModelAndView("login");
-		return modelAndView;
-	}
+	
 	@RequestMapping("loginIn")
 	public String loginIn(Model model,User user){
 		String userAccount = user.getUserAccount();
 		String password = user.getPassword();
 		
-		System.out.println(userAccount + " " + password);
+		log.info(userAccount + " " + password);
 		
 		if(userAccount != null && password != null){
 			UsernamePasswordToken token = new UsernamePasswordToken(userAccount,password);
@@ -57,9 +47,11 @@ public class ShiroController {
 			//session.setAttribute("current",userAccount);
 			Subject subject = SecurityUtils.getSubject();
 			Session session = subject.getSession(); 
-			System.out.println(session.getHost());
+			
 			try {
 				 subject.login(token);
+				 System.out.println(session.getHost());//用户登录ip
+				 
 //				 System.out.println("用户是否是通过验证登陆："+subject.isAuthenticated());
 //				 System.out.println("用户是否是通过记住我登陆："+subject.isRemembered());
 			}catch(UnknownAccountException uae){
