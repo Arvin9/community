@@ -73,7 +73,7 @@
 						</shiro:guest> 
 						<shiro:user>  
 							<li>
-								<a href='/index'>欢迎<span style="color:red"><shiro:principal/></span>登录</a>
+								<a href='/index'>欢迎<span id="topUserAccount" style="color:red"><shiro:principal/></span>登录</a>
 							</li>
 							<li>	
 								<a href="logout">退出</a> 

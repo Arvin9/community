@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.nebulas.dao.ExercisesDao">
+
+	<select id="getExercisesByParm" resultType="java.util.Map">
+		select 
+			exercises_id exercisesId,
+			exercises_title exercisesTitle,
+			exercises_content exercisesContent,
+			exercises_answer exercisesAnswer
+		from exercises 
+		
+		limit 1
+	
+	</select>
+</mapper>

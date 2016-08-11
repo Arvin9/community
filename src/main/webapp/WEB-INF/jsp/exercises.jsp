@@ -33,9 +33,24 @@
 		  	</div>
 		  	<div class="col-md-3"></div>
 		</div>
-
+<script>
+	$(function(){
+		alert($('#topUserAccount').text());
+		$.ajax({
+			url : "${ctx}/getExercisesByUserAccount",
+			type : "GET",
+			data : {
+				userAccount : $('#topUserAccount').text()
+			},
+			success: function(data){
+				alert(data);
+			}
+		});
 		
+	});
+	
 
+</script>
 
 		<%-- 页面修改内容块end  --%>
 		<%-- 静态包含 --%>
