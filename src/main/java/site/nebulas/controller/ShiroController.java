@@ -16,13 +16,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import site.nebulas.beans.LogLogin;
 import site.nebulas.beans.User;
+import site.nebulas.service.LogLoginService;
 import site.nebulas.service.UserService;
+import site.nebulas.util.DateUtil;
 
 
 /**
  * @author Caihonghui
  * @since 20160808
+ * @version 20160811添加登陆日志
+ * 		
  * @
  */
 @Controller
@@ -31,11 +37,12 @@ public class ShiroController {
 	Logger log=LoggerFactory.getLogger(getClass());
 	@Resource
 	UserService userService;
-	
-
+	@Resource
+	LogLoginService logLoginService;
 	
 	@RequestMapping("loginIn")
 	public String loginIn(Model model,User user){
+		LogLogin logLogin = new LogLogin();
 		String userAccount = user.getUserAccount();
 		String password = user.getPassword();
 		
@@ -50,8 +57,10 @@ public class ShiroController {
 			
 			try {
 				 subject.login(token);
-				 System.out.println(session.getHost());//用户登录ip
-				 
+				 logLogin.setUserAccount(userAccount);
+				 logLogin.setLoginIp(session.getHost());//用户登录ip
+				 logLogin.setLoginTime(DateUtil.getCurrentSysDate());
+				 logLoginService.insert(logLogin);
 //				 System.out.println("用户是否是通过验证登陆："+subject.isAuthenticated());
 //				 System.out.println("用户是否是通过记住我登陆："+subject.isRemembered());
 			}catch(UnknownAccountException uae){
