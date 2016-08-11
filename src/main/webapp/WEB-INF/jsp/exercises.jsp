@@ -11,7 +11,7 @@
 				<div class="panel panel-info">
 					<div class="panel-heading">Panel heading</div>
 					<table class="table">
-						<tr hidden="didden">
+						<tr hidden="hidden">
 							<td>gh</td>
 							<td>ssss1</td>
 						</tr>

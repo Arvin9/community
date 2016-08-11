@@ -32,8 +32,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<input	type="text" id="userAccount" name="userAccount"
 				class="form-control" required autofocus> 
 			<label for="inputPassword" class="sr-only"> Password </label> 
-			<input type="password" id="password" name="password" class="form-control"
-				placeholder="Password" required>
+			<input type="password" id="bePassword" name="bePassword" class="form-control"
+				 required>
+			<input type="password" id="password" name="password" hidden="hidden" >
 			<div class="checkbox">
 				<label> 
 					<input type="checkbox" value="remember-me">
@@ -45,9 +46,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<!-- /container -->
 	<script>
-	$(function(){
-		
-	});
 	var message = "${message}"
 	if ("no" == message) {
 		$.messager.alert("警告", "无此用户");
@@ -55,11 +53,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$.messager.alert("警告", "密码错误");
 	}
 	function login() {
-		var password = md5($('#password').val());
+		var password = hex_md5($('#bePassword').val());
 		$('#password').val(password);
 		$('#form').submit();
 	}
-			
 	</script>	
 </body>
 </html>
