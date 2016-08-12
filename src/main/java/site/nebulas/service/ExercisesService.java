@@ -13,4 +13,7 @@ public class ExercisesService {
 	public Map<String,String> getExercisesByParm(Exercises exercises){
 		return exercisesDao.getExercisesByParm(exercises);
 	}
+	public Map<String,String> getExercisesByUserAccount(String userAccount){
+		return exercisesDao.getExercisesByUserAccount(userAccount);
+	}
 }

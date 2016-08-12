@@ -13,4 +13,16 @@
 		limit 1
 	
 	</select>
+	<select id="getExercisesByUserAccount" resultType="java.util.Map">
+		select 
+			exercises_id exercisesId,
+			exercises_title exercisesTitle,
+			exercises_content exercisesContent
+		from exercises 
+		WHERE exercises_id not in(SELECT exercises_id
+			FROM exercises_answer
+			WHERE user_account = #{userAccount})
+		limit 1
+	
+	</select>
 </mapper>

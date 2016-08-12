@@ -1,5 +1,7 @@
 package site.nebulas.controller;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 
+import site.nebulas.beans.Exercises;
+import site.nebulas.beans.Response;
 import site.nebulas.service.DailySentenceService;
 import site.nebulas.service.ExercisesService;
 
@@ -24,13 +28,29 @@ public class ExercisesController {
 	private ExercisesService exercisesService; 
 	
 	
+	@RequestMapping("getExercisesByParm")
+	@ResponseBody
+	public String getExercisesByParm(Exercises exercises){
+		logger.debug(exercisesService.getExercisesByParm(exercises).toString());
+		return JSON.toJSONString(exercisesService.getExercisesByParm(exercises));
+	}
+	
 	@RequestMapping("getExercisesByUserAccount")
 	@ResponseBody
-	public String getExercisesByUserAccount(String userAccount){
-		System.out.println(userAccount);
-		logger.debug(exercisesService.getExercisesByParm(null).toString());
+	public Response getExercisesByUserAccount(String userAccount){
+		Response rs = new Response(); 
+		Map<String,String> map = exercisesService.getExercisesByUserAccount(userAccount);
 		
-		return JSON.toJSONString(exercisesService.getExercisesByParm(null));
+		if(null == map){
+			rs.setStstus(130);
+			rs.setMsg("没有题目了");
+			return rs;
+		}
+		rs.setStstus(200);
+		rs.setMsg("success");
+		rs.setData(JSON.toJSONString(map));
+		logger.info(map.toString());
+		return rs;
 	}
 	
 	 

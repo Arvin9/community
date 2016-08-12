@@ -3306,4 +3306,563 @@ PropertyAccessException 1: org.springframework.beans.MethodInvocationException: 
  [DEBUG] [2016-08-12 00:06:18][site.nebulas.dao.ExercisesDao.getExercisesByParm]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent, exercises_answer exercisesAnswer from exercises limit 1 
  [DEBUG] [2016-08-12 00:06:18][site.nebulas.dao.ExercisesDao.getExercisesByParm]==> Parameters: 
  [DEBUG] [2016-08-12 00:06:18][site.nebulas.dao.ExercisesDao.getExercisesByParm]<==      Total: 1
+ [INFO] [2016-08-12 22:53:21][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2016-08-12 22:53:21][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 12 22:53:21 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-12 22:53:22][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2016-08-12 22:53:23][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-shiro-web.xml]
+ [INFO] [2016-08-12 22:53:24][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2016-08-12 22:53:24][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-12 22:53:24][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:25][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:25][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:25][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:25][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class com.sun.proxy.$Proxy14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:25][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userService' of type [class site.nebulas.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:26][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:26][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [passwordRetryCache]
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'credentialsMatcher' of type [class site.nebulas.credentials.RetryLimitHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.apache.shiro.realm.AuthorizingRealm]No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userRealm' of type [class site.nebulas.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authenticationCache]
+ [INFO] [2016-08-12 22:53:27][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authorizationCache]
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#79144d0e' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#79144d0e' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 22:53:27][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 6640 ms
+ [INFO] [2016-08-12 22:53:28][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2016-08-12 22:53:28][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Aug 12 22:53:28 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-12 22:53:28][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO] [2016-08-12 22:53:28][net.sf.ehcache.util.UpdateChecker]New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+ [INFO] [2016-08-12 22:53:28][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-12 22:53:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/book],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.BookController.operationLog()
+ [INFO] [2016-08-12 22:53:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/bookQueryByParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.BookController.bookQueryByParam(site.nebulas.beans.Book)
+ [INFO] [2016-08-12 22:53:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByUserAccount],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ExercisesController.getExercisesByUserAccount(java.lang.String)
+ [INFO] [2016-08-12 22:53:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.helloController.hello()
+ [INFO] [2016-08-12 22:53:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.index()
+ [INFO] [2016-08-12 22:53:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.login()
+ [INFO] [2016-08-12 22:53:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/exercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.exercises()
+ [INFO] [2016-08-12 22:53:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/loginIn],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ShiroController.loginIn(org.springframework.ui.Model,site.nebulas.beans.User)
+ [INFO] [2016-08-12 22:53:31][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO] [2016-08-12 22:53:31][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO] [2016-08-12 22:53:31][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 3255 ms
+ [INFO] [2016-08-12 22:54:44][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+ [INFO] [2016-08-12 22:54:45][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: qtp507084503-24
+ [INFO] [2016-08-12 22:54:45][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+ [INFO] [2016-08-12 22:54:45][org.quartz.core.QuartzScheduler]Quartz Scheduler v.1.6.1 created.
+ [INFO] [2016-08-12 22:54:45][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+ [INFO] [2016-08-12 22:54:45][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+ [INFO] [2016-08-12 22:54:45][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 1.6.1
+ [INFO] [2016-08-12 22:54:45][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+ [INFO] [2016-08-12 22:54:45][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [shiro-activeSessionCache]
+ [INFO] [2016-08-12 22:54:45][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-12 22:54:45][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [INFO] [2016-08-12 22:54:51][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [DEBUG] [2016-08-12 22:54:53][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-12 22:54:53][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 22:54:53][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-12 22:54:53][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip )values ( ?, ?, ? ) 
+ [DEBUG] [2016-08-12 22:54:53][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-12 22:54:53(String), 0:0:0:0:0:0:0:1(String)
+ [DEBUG] [2016-08-12 22:54:53][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [WARN] [2016-08-12 22:54:55][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'SpringMVC'
+ [INFO] [2016-08-12 23:11:59][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Aug 12 22:53:28 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-12 23:11:59][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Fri Aug 12 22:53:21 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-12 23:11:59][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+ [INFO] [2016-08-12 23:11:59][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+ [INFO] [2016-08-12 23:11:59][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+ [INFO] [2016-08-12 23:11:59][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Disabled session validation scheduler.
+ [INFO] [2016-08-12 23:18:35][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2016-08-12 23:18:35][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 12 23:18:35 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-12 23:18:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2016-08-12 23:18:36][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-shiro-web.xml]
+ [INFO] [2016-08-12 23:18:37][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2016-08-12 23:18:38][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-12 23:18:38][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:39][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:39][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:39][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:39][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class com.sun.proxy.$Proxy14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:39][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userService' of type [class site.nebulas.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [passwordRetryCache]
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'credentialsMatcher' of type [class site.nebulas.credentials.RetryLimitHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.apache.shiro.realm.AuthorizingRealm]No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userRealm' of type [class site.nebulas.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:40][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authenticationCache]
+ [INFO] [2016-08-12 23:18:40][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authorizationCache]
+ [INFO] [2016-08-12 23:18:40][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:41][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:41][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#2842c098' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:41][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#2842c098' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:18:41][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 6107 ms
+ [INFO] [2016-08-12 23:18:41][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2016-08-12 23:18:41][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Aug 12 23:18:41 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-12 23:18:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO] [2016-08-12 23:18:41][net.sf.ehcache.util.UpdateChecker]New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+ [INFO] [2016-08-12 23:18:42][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/bookQueryByParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.BookController.bookQueryByParam(site.nebulas.beans.Book)
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/book],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.BookController.operationLog()
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByParm],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ExercisesController.getExercisesByParm(site.nebulas.beans.Exercises)
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByUserAccount],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ExercisesController.getExercisesByUserAccount(java.lang.String)
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.helloController.hello()
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.index()
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.login()
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/exercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.exercises()
+ [INFO] [2016-08-12 23:18:42][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/loginIn],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ShiroController.loginIn(org.springframework.ui.Model,site.nebulas.beans.User)
+ [INFO] [2016-08-12 23:18:44][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO] [2016-08-12 23:18:44][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO] [2016-08-12 23:18:44][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 3212 ms
+ [INFO] [2016-08-12 23:18:52][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+ [INFO] [2016-08-12 23:18:52][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: qtp507084503-21
+ [INFO] [2016-08-12 23:18:52][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+ [INFO] [2016-08-12 23:18:52][org.quartz.core.QuartzScheduler]Quartz Scheduler v.1.6.1 created.
+ [INFO] [2016-08-12 23:18:52][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+ [INFO] [2016-08-12 23:18:52][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+ [INFO] [2016-08-12 23:18:52][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 1.6.1
+ [INFO] [2016-08-12 23:18:52][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+ [INFO] [2016-08-12 23:18:52][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [shiro-activeSessionCache]
+ [INFO] [2016-08-12 23:18:52][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [INFO] [2016-08-12 23:18:52][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-12 23:18:52][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [DEBUG] [2016-08-12 23:18:53][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-12 23:18:53][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 23:18:54][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-12 23:18:54][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip )values ( ?, ?, ? ) 
+ [DEBUG] [2016-08-12 23:18:54][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-12 23:18:54(String), 0:0:0:0:0:0:0:1(String)
+ [DEBUG] [2016-08-12 23:18:54][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [DEBUG] [2016-08-12 23:19:02][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-12 23:19:02][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 23:19:02][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-12 23:19:02][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-12 23:19:02][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 23:19:02][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-12 23:48:52][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-12 23:48:52][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [INFO] [2016-08-12 23:55:47][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2016-08-12 23:55:48][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 12 23:55:48 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-12 23:55:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2016-08-12 23:55:49][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-shiro-web.xml]
+ [INFO] [2016-08-12 23:55:50][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2016-08-12 23:55:50][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-12 23:55:50][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:51][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:51][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:51][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:51][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class com.sun.proxy.$Proxy14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:51][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userService' of type [class site.nebulas.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:52][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [passwordRetryCache]
+ [INFO] [2016-08-12 23:55:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'credentialsMatcher' of type [class site.nebulas.credentials.RetryLimitHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:52][org.apache.shiro.realm.AuthorizingRealm]No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+ [INFO] [2016-08-12 23:55:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userRealm' of type [class site.nebulas.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authenticationCache]
+ [INFO] [2016-08-12 23:55:53][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authorizationCache]
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#775edae0' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#775edae0' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-12 23:55:53][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 5655 ms
+ [INFO] [2016-08-12 23:55:53][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2016-08-12 23:55:53][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Aug 12 23:55:53 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-12 23:55:53][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO] [2016-08-12 23:55:54][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/book],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.BookController.operationLog()
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/bookQueryByParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.BookController.bookQueryByParam(site.nebulas.beans.Book)
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByParm],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ExercisesController.getExercisesByParm(site.nebulas.beans.Exercises)
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByUserAccount],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.getExercisesByUserAccount(java.lang.String)
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.helloController.hello()
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.index()
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.login()
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/exercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.exercises()
+ [INFO] [2016-08-12 23:55:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/loginIn],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ShiroController.loginIn(org.springframework.ui.Model,site.nebulas.beans.User)
+ [INFO] [2016-08-12 23:55:55][net.sf.ehcache.util.UpdateChecker]New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+ [INFO] [2016-08-12 23:55:56][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO] [2016-08-12 23:55:56][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO] [2016-08-12 23:55:56][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 2764 ms
+ [INFO] [2016-08-12 23:56:09][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+ [INFO] [2016-08-12 23:56:09][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: qtp507084503-21
+ [INFO] [2016-08-12 23:56:09][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+ [INFO] [2016-08-12 23:56:09][org.quartz.core.QuartzScheduler]Quartz Scheduler v.1.6.1 created.
+ [INFO] [2016-08-12 23:56:09][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+ [INFO] [2016-08-12 23:56:09][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+ [INFO] [2016-08-12 23:56:09][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 1.6.1
+ [INFO] [2016-08-12 23:56:09][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+ [INFO] [2016-08-12 23:56:09][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [shiro-activeSessionCache]
+ [INFO] [2016-08-12 23:56:09][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-12 23:56:09][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [INFO] [2016-08-12 23:56:14][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [DEBUG] [2016-08-12 23:56:15][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-12 23:56:15][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 23:56:15][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-12 23:56:15][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip )values ( ?, ?, ? ) 
+ [DEBUG] [2016-08-12 23:56:15][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-12 23:56:15(String), 0:0:0:0:0:0:0:1(String)
+ [DEBUG] [2016-08-12 23:56:15][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [DEBUG] [2016-08-12 23:56:32][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-12 23:56:32][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 23:56:32][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-12 23:56:32][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-12 23:57:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-12 23:57:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 23:57:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-12 23:57:27][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-12 23:57:59][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-12 23:57:59][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 23:57:59][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-12 23:57:59][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-12 23:59:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-12 23:59:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-12 23:59:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-12 23:59:42][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-13 00:00:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:00:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:00:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:00:57][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-13 00:01:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:01:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:01:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:01:47][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-13 00:02:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:02:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:02:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:02:05][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-13 00:02:41][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:02:41][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:02:41][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:02:41][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-13 00:02:58][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:02:58][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:02:58][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:02:58][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-13 00:03:11][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:03:11][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:03:11][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:03:11][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-13 00:07:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:07:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:07:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:07:56][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqq}
+ [DEBUG] [2016-08-13 00:10:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:10:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:10:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 0
+ [INFO] [2016-08-13 00:11:10][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2016-08-13 00:11:11][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sat Aug 13 00:11:11 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-13 00:11:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2016-08-13 00:11:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-shiro-web.xml]
+ [INFO] [2016-08-13 00:11:12][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2016-08-13 00:11:12][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-13 00:11:13][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:13][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:13][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:13][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:13][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class com.sun.proxy.$Proxy14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:13][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userService' of type [class site.nebulas.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [passwordRetryCache]
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'credentialsMatcher' of type [class site.nebulas.credentials.RetryLimitHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.apache.shiro.realm.AuthorizingRealm]No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userRealm' of type [class site.nebulas.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authenticationCache]
+ [INFO] [2016-08-13 00:11:15][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authorizationCache]
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#2507a170' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:15][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#2507a170' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 00:11:16][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 5925 ms
+ [INFO] [2016-08-13 00:11:16][net.sf.ehcache.util.UpdateChecker]New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+ [INFO] [2016-08-13 00:11:16][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2016-08-13 00:11:16][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sat Aug 13 00:11:16 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-13 00:11:16][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO] [2016-08-13 00:11:16][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/book],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.BookController.operationLog()
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/bookQueryByParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.BookController.bookQueryByParam(site.nebulas.beans.Book)
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByParm],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ExercisesController.getExercisesByParm(site.nebulas.beans.Exercises)
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByUserAccount],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.getExercisesByUserAccount(java.lang.String)
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.helloController.hello()
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.index()
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.login()
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/exercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.exercises()
+ [INFO] [2016-08-13 00:11:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/loginIn],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ShiroController.loginIn(org.springframework.ui.Model,site.nebulas.beans.User)
+ [INFO] [2016-08-13 00:11:19][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO] [2016-08-13 00:11:19][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO] [2016-08-13 00:11:19][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 3008 ms
+ [INFO] [2016-08-13 00:11:31][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+ [INFO] [2016-08-13 00:11:31][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: qtp507084503-25
+ [INFO] [2016-08-13 00:11:31][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+ [INFO] [2016-08-13 00:11:31][org.quartz.core.QuartzScheduler]Quartz Scheduler v.1.6.1 created.
+ [INFO] [2016-08-13 00:11:31][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+ [INFO] [2016-08-13 00:11:31][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+ [INFO] [2016-08-13 00:11:31][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 1.6.1
+ [INFO] [2016-08-13 00:11:31][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+ [INFO] [2016-08-13 00:11:31][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [shiro-activeSessionCache]
+ [INFO] [2016-08-13 00:11:31][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-13 00:11:31][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [INFO] [2016-08-13 00:11:36][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [DEBUG] [2016-08-13 00:11:37][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-13 00:11:37][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:11:37][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-13 00:11:37][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip )values ( ?, ?, ? ) 
+ [DEBUG] [2016-08-13 00:11:37][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-13 00:11:37(String), 0:0:0:0:0:0:0:1(String)
+ [DEBUG] [2016-08-13 00:11:37][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [DEBUG] [2016-08-13 00:11:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:11:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:11:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 0
+ [DEBUG] [2016-08-13 00:13:33][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:13:33][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:13:33][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 0
+ [DEBUG] [2016-08-13 00:15:14][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:15:14][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:15:14][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 0
+ [DEBUG] [2016-08-13 00:15:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:15:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:15:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 0
+ [DEBUG] [2016-08-13 00:16:01][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:16:01][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:16:01][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:16:01][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqqq}
+ [DEBUG] [2016-08-13 00:16:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:16:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:16:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:16:42][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=qqq, exercisesContent=qqqq}
+ [DEBUG] [2016-08-13 00:17:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:17:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:17:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:17:12][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:23:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:23:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:23:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:23:09][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:23:30][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:23:30][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:23:30][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:23:30][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:25:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:25:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:25:47][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:25:47][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:26:13][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:26:13][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:26:13][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:26:13][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:27:10][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:27:10][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:27:10][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:27:10][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:27:53][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:27:53][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:27:53][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:27:53][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:28:13][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:28:13][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:28:20][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:28:20][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:28:55][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:28:55][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:28:55][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:28:55][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:31:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:31:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:31:42][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:31:42][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:32:40][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:32:40][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:32:40][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:32:40][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:32:50][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:32:50][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:32:50][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:32:50][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:34:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:34:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:34:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:34:03][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:36:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:36:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:36:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:36:09][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:36:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:36:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:36:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:36:37][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:40:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:40:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:40:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:40:24][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:40:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:40:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:40:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:40:56][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [INFO] [2016-08-13 00:41:31][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-13 00:41:31][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [DEBUG] [2016-08-13 00:41:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:41:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:41:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:41:54][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:42:26][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:42:26][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:42:26][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:42:26][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:44:17][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:44:17][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:44:17][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:44:17][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:45:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:45:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:45:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:45:03][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:45:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:45:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:45:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:45:12][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:46:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:46:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:46:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:46:08][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:46:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:46:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:46:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:46:27][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:46:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:46:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:46:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:46:35][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:47:06][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:47:06][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:47:06][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:47:06][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:47:19][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:47:19][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:47:19][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:47:19][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:47:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:47:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:47:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:47:39][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:49:53][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:49:53][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:49:53][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:49:53][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:51:33][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:51:34][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:51:34][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:51:34][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:52:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:52:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:52:39][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:52:39][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:53:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:53:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:53:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:53:05][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:53:23][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:53:23][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:53:23][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:53:23][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:53:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:53:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:53:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:53:57][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:55:04][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:55:04][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:55:04][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:55:04][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:55:34][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:55:34][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:55:34][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:55:34][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:56:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:56:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:56:57][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:56:57][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:57:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:57:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:57:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:57:29][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 00:59:48][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 00:59:48][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 00:59:48][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 00:59:48][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:01:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:01:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:01:08][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:01:08][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:03:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:03:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:03:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:03:29][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:04:31][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:04:31][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:04:31][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:04:31][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:04:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:04:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:04:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:04:44][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:05:18][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:05:18][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:05:18][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:05:18][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:05:28][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:05:28][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:05:28][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:05:28][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:06:06][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:06:06][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:06:06][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:06:06][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:06:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:06:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:06:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:06:24][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:06:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:06:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:06:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:06:35][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:06:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:06:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:06:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:06:44][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:06:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:06:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:06:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:06:54][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:07:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:07:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:07:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:07:03][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:07:26][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:07:26][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:07:26][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:07:26][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:08:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:08:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:08:12][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:08:12][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:09:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:09:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:09:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:09:03][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
+ [DEBUG] [2016-08-13 01:09:17][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 01:09:17][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 01:09:17][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 01:09:17][site.nebulas.controller.ExercisesController]{exercisesId=3, exercisesTitle=title, exercisesContent=content}
  
