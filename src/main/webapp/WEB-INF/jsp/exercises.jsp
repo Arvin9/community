@@ -35,7 +35,7 @@
 						<div class="form-group">
 							<div class="col-sm-1 control-label"></div>
 							<div class="col-sm-10 control-label">
-								<button type="button " class="btn btn-block btn-info" >提交</button>
+								<button type="button " class="btn btn-block btn-info" onclick="submitExercises()">提交</button>
 							</div>
 						</div>
 							
@@ -48,6 +48,10 @@
 		</div>
 <script>
 	$(function(){
+		getExercises();
+	});
+	
+	function getExercises(){
 		$.ajax({
 			url : "${ctx}/getExercisesByUserAccount",
 			type : "GET",
@@ -61,14 +65,16 @@
 				}
 				var obj = $.parseJSON(data.data);
 				
-				$("#exercisesId").val(obj.exercisesId);
-				$("#exercisesTitle").text(obj.exercisesTitle);
-				$("#exercisesContent").text(obj.exercisesContent);
+				$('#exercisesId').val(obj.exercisesId);
+				$('#exercisesTitle').text(obj.exercisesTitle);
+				$('#exercisesContent').text(obj.exercisesContent);
 			}
 		});
-		
-	});
-	
+	}
+	function submitExercises(){
+		alert($('#exercisesId').val());
+		alert($('#exercisesAnswer').val());
+	}
 
 </script>
 
