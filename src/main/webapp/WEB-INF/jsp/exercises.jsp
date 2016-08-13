@@ -67,7 +67,7 @@
 	
 	function getExercises(){
 		$.ajax({
-			url : "${ctx}/getExercisesByUserAccount",
+			url : "getExercisesByUserAccount",
 			type : "GET",
 			success: function(data){
 				if(!data.data){
@@ -84,7 +84,7 @@
 	}
 	function submitExercises(){
 		$.ajax({
-			url : "${ctx}/submitExercises",
+			url : "submitExercises",
 			type : "POST",
 			data : {
 				exercisesId : $('#exercisesId').val(),

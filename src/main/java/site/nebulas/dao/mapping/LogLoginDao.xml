@@ -6,11 +6,13 @@
 		insert into log_login (
 			user_account,
 			login_time,
-			login_ip
+			login_ip,
+			login_state
 		)values (
 			#{userAccount},
 			#{loginTime},
-			#{loginIp}
+			#{loginIp},
+			#{loginState}
 		)
 	</insert>
 </mapper>

@@ -9,6 +9,8 @@ public class LogLogin {
 	private String userAccount;
 	private String loginTime;
 	private String loginIp;
+	private int loginState;
+	
 	public Integer getLogLoginId() {
 		return logLoginId;
 	}
@@ -32,6 +34,12 @@ public class LogLogin {
 	}
 	public void setLoginIp(String loginIp) {
 		this.loginIp = loginIp;
+	}
+	public int getLoginState() {
+		return loginState;
+	}
+	public void setLoginState(int loginState) {
+		this.loginState = loginState;
 	}
 	
 	

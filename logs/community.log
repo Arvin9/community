@@ -5844,4 +5844,284 @@ StringBuffer sb = new StringBuffer();}
             return null;
         }}
  [WARN] [2016-08-13 12:02:57][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'SpringMVC'
+ [INFO] [2016-08-13 15:51:40][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2016-08-13 15:51:40][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sat Aug 13 15:51:40 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-13 15:51:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2016-08-13 15:51:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-shiro-web.xml]
+ [INFO] [2016-08-13 15:51:43][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2016-08-13 15:51:43][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-13 15:51:43][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:44][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:44][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:44][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:44][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class com.sun.proxy.$Proxy14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:44][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userService' of type [class site.nebulas.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [passwordRetryCache]
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'credentialsMatcher' of type [class site.nebulas.credentials.RetryLimitHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.apache.shiro.realm.AuthorizingRealm]No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userRealm' of type [class site.nebulas.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authenticationCache]
+ [INFO] [2016-08-13 15:51:45][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authorizationCache]
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#56a09a5c' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:45][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#56a09a5c' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 15:51:46][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 5625 ms
+ [INFO] [2016-08-13 15:51:46][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2016-08-13 15:51:46][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sat Aug 13 15:51:46 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-13 15:51:46][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO] [2016-08-13 15:51:46][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/book],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.BookController.operationLog()
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/bookQueryByParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.BookController.bookQueryByParam(site.nebulas.beans.Book)
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByUserAccount],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.getExercisesByUserAccount()
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/submitExercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.submitExercises(site.nebulas.beans.Exercises)
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.helloController.hello()
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.index()
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.login()
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/exercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.exercises()
+ [INFO] [2016-08-13 15:51:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/loginIn],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ShiroController.loginIn(org.springframework.ui.Model,site.nebulas.beans.User)
+ [INFO] [2016-08-13 15:51:47][net.sf.ehcache.util.UpdateChecker]New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+ [INFO] [2016-08-13 15:51:48][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO] [2016-08-13 15:51:48][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO] [2016-08-13 15:51:49][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 2757 ms
+ [INFO] [2016-08-13 15:52:26][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+ [INFO] [2016-08-13 15:52:26][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: qtp507084503-22
+ [INFO] [2016-08-13 15:52:26][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+ [INFO] [2016-08-13 15:52:26][org.quartz.core.QuartzScheduler]Quartz Scheduler v.1.6.1 created.
+ [INFO] [2016-08-13 15:52:26][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+ [INFO] [2016-08-13 15:52:26][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+ [INFO] [2016-08-13 15:52:26][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 1.6.1
+ [INFO] [2016-08-13 15:52:26][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+ [INFO] [2016-08-13 15:52:26][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [shiro-activeSessionCache]
+ [INFO] [2016-08-13 15:52:26][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-13 15:52:26][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [INFO] [2016-08-13 15:52:31][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [DEBUG] [2016-08-13 15:52:32][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-13 15:52:32][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 15:52:32][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-13 15:52:32][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip )values ( ?, ?, ? ) 
+ [DEBUG] [2016-08-13 15:52:32][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-13 15:52:32(String), 0:0:0:0:0:0:0:1(String)
+ [DEBUG] [2016-08-13 15:52:32][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [WARN] [2016-08-13 15:52:34][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'SpringMVC'
+ [DEBUG] [2016-08-13 15:52:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 15:52:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 15:52:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 15:52:37][site.nebulas.controller.ExercisesController]{exercisesId=2, exercisesTitle=www, exercisesContent=try {
+            File file=new File(filePath);
+            if(file.isFile() && file.exists()){ //判断文件是否存在
+            	InputStreamReader read = new InputStreamReader(new FileInputStream(file),"utf-8");//考虑到编码格式
+                BufferedReader bufferedReader = new BufferedReader(read);
+                String lineTxt = null;
+                while((lineTxt = bufferedReader.readLine()) != null){
+                	sb.append(lineTxt);
+                }
+                read.close();
+            }else{
+            	System.out.println("找不到指定的文件");
+            	return null;
+            }
+        } catch (Exception e) {
+            System.out.println("读取文件内容出错");
+            e.printStackTrace();
+            return null;
+        }}
+ [DEBUG] [2016-08-13 15:58:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 15:58:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 15:58:03][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 15:58:03][site.nebulas.controller.ExercisesController]{exercisesId=2, exercisesTitle=www, exercisesContent=try {
+            File file=new File(filePath);
+            if(file.isFile() && file.exists()){ //判断文件是否存在
+            	InputStreamReader read = new InputStreamReader(new FileInputStream(file),"utf-8");//考虑到编码格式
+                BufferedReader bufferedReader = new BufferedReader(read);
+                String lineTxt = null;
+                while((lineTxt = bufferedReader.readLine()) != null){
+                	sb.append(lineTxt);
+                }
+                read.close();
+            }else{
+            	System.out.println("找不到指定的文件");
+            	return null;
+            }
+        } catch (Exception e) {
+            System.out.println("读取文件内容出错");
+            e.printStackTrace();
+            return null;
+        }}
+ [DEBUG] [2016-08-13 15:59:18][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 15:59:18][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 15:59:18][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 15:59:18][site.nebulas.controller.ExercisesController]{exercisesId=2, exercisesTitle=www, exercisesContent=try {
+            File file=new File(filePath);
+            if(file.isFile() && file.exists()){ //判断文件是否存在
+            	InputStreamReader read = new InputStreamReader(new FileInputStream(file),"utf-8");//考虑到编码格式
+                BufferedReader bufferedReader = new BufferedReader(read);
+                String lineTxt = null;
+                while((lineTxt = bufferedReader.readLine()) != null){
+                	sb.append(lineTxt);
+                }
+                read.close();
+            }else{
+            	System.out.println("找不到指定的文件");
+            	return null;
+            }
+        } catch (Exception e) {
+            System.out.println("读取文件内容出错");
+            e.printStackTrace();
+            return null;
+        }}
+ [INFO] [2016-08-13 16:22:26][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-13 16:22:26][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [INFO] [2016-08-13 16:52:26][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-13 16:52:26][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  [2] sessions were stopped.
+ [INFO] [2016-08-13 16:56:46][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [DEBUG] [2016-08-13 16:56:46][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-13 16:56:46][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 16:56:46][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-13 16:56:46][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip )values ( ?, ?, ? ) 
+ [DEBUG] [2016-08-13 16:56:46][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-13 16:56:46(String), 0:0:0:0:0:0:0:1(String)
+ [DEBUG] [2016-08-13 16:56:46][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [DEBUG] [2016-08-13 16:59:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 16:59:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 16:59:24][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 16:59:24][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-13 17:00:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 17:00:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 17:00:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 17:00:29][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [INFO] [2016-08-13 17:06:09][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sat Aug 13 15:51:46 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-13 17:06:09][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Sat Aug 13 15:51:40 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-13 17:06:09][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+ [INFO] [2016-08-13 17:06:09][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+ [INFO] [2016-08-13 17:06:09][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+ [INFO] [2016-08-13 17:06:09][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Disabled session validation scheduler.
+ [INFO] [2016-08-13 17:06:18][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2016-08-13 17:06:18][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sat Aug 13 17:06:18 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-13 17:06:18][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2016-08-13 17:06:18][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-shiro-web.xml]
+ [INFO] [2016-08-13 17:06:19][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2016-08-13 17:06:19][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-13 17:06:19][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class com.sun.proxy.$Proxy35] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userService' of type [class site.nebulas.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [passwordRetryCache]
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'credentialsMatcher' of type [class site.nebulas.credentials.RetryLimitHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.apache.shiro.realm.AuthorizingRealm]No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userRealm' of type [class site.nebulas.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authenticationCache]
+ [INFO] [2016-08-13 17:06:20][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authorizationCache]
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#27f6b1ac' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#27f6b1ac' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:06:20][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 2664 ms
+ [INFO] [2016-08-13 17:06:20][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2016-08-13 17:06:20][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sat Aug 13 17:06:20 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-13 17:06:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO] [2016-08-13 17:06:21][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/book],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.BookController.operationLog()
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/bookQueryByParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.BookController.bookQueryByParam(site.nebulas.beans.Book)
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByUserAccount],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.getExercisesByUserAccount()
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/submitExercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.submitExercises(site.nebulas.beans.Exercises)
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.helloController.hello()
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.index()
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.login()
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/exercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.exercises()
+ [INFO] [2016-08-13 17:06:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/loginIn],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ShiroController.loginIn(org.springframework.ui.Model,site.nebulas.beans.User)
+ [INFO] [2016-08-13 17:06:23][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO] [2016-08-13 17:06:23][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO] [2016-08-13 17:06:24][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 3192 ms
+ [INFO] [2016-08-13 17:10:47][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2016-08-13 17:10:48][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sat Aug 13 17:10:48 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-13 17:10:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2016-08-13 17:10:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-shiro-web.xml]
+ [INFO] [2016-08-13 17:10:49][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2016-08-13 17:10:49][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-13 17:10:49][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:50][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:50][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:50][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:50][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class com.sun.proxy.$Proxy14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:50][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userService' of type [class site.nebulas.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [passwordRetryCache]
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'credentialsMatcher' of type [class site.nebulas.credentials.RetryLimitHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.apache.shiro.realm.AuthorizingRealm]No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userRealm' of type [class site.nebulas.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authenticationCache]
+ [INFO] [2016-08-13 17:10:52][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authorizationCache]
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#56a09a5c' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#56a09a5c' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-13 17:10:52][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 5165 ms
+ [INFO] [2016-08-13 17:10:53][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2016-08-13 17:10:53][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sat Aug 13 17:10:53 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-13 17:10:53][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO] [2016-08-13 17:10:53][net.sf.ehcache.util.UpdateChecker]New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+ [INFO] [2016-08-13 17:10:53][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/bookQueryByParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.BookController.bookQueryByParam(site.nebulas.beans.Book)
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/book],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.BookController.operationLog()
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/submitExercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.submitExercises(site.nebulas.beans.Exercises)
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByUserAccount],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.getExercisesByUserAccount()
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.helloController.hello()
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.index()
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.login()
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/exercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.exercises()
+ [INFO] [2016-08-13 17:10:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/loginIn],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ShiroController.loginIn(org.springframework.ui.Model,site.nebulas.beans.User)
+ [INFO] [2016-08-13 17:10:55][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO] [2016-08-13 17:10:55][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO] [2016-08-13 17:10:55][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 2783 ms
+ [INFO] [2016-08-13 17:11:02][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+ [INFO] [2016-08-13 17:11:02][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: qtp507084503-20
+ [INFO] [2016-08-13 17:11:02][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+ [INFO] [2016-08-13 17:11:02][org.quartz.core.QuartzScheduler]Quartz Scheduler v.1.6.1 created.
+ [INFO] [2016-08-13 17:11:02][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+ [INFO] [2016-08-13 17:11:02][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+ [INFO] [2016-08-13 17:11:02][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 1.6.1
+ [INFO] [2016-08-13 17:11:02][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+ [INFO] [2016-08-13 17:11:02][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [shiro-activeSessionCache]
+ [INFO] [2016-08-13 17:11:02][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-13 17:11:02][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [INFO] [2016-08-13 17:11:06][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [DEBUG] [2016-08-13 17:11:07][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-13 17:11:07][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 17:11:08][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-13 17:11:08][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip, login_state )values ( ?, ?, ?, ? ) 
+ [DEBUG] [2016-08-13 17:11:08][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-13 17:11:08(String), 0:0:0:0:0:0:0:1(String), 1(Integer)
+ [DEBUG] [2016-08-13 17:11:08][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [INFO] [2016-08-13 17:11:23][site.nebulas.controller.ShiroController]nebula 6592c21ec8351f8469ef63b011e796e1
+ [DEBUG] [2016-08-13 17:11:23][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-13 17:11:23][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 17:11:24][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-13 17:11:24][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip, login_state )values ( ?, ?, ?, ? ) 
+ [DEBUG] [2016-08-13 17:11:24][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-13 17:11:24(String), 0:0:0:0:0:0:0:1(String), 2(Integer)
+ [DEBUG] [2016-08-13 17:11:24][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [INFO] [2016-08-13 17:11:37][site.nebulas.controller.ShiroController]nebula 6592c21ec8351f8469ef63b011e796e1
+ [DEBUG] [2016-08-13 17:11:37][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip, login_state )values ( ?, ?, ?, ? ) 
+ [DEBUG] [2016-08-13 17:11:37][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-13 17:11:37(String), 0:0:0:0:0:0:0:1(String), 2(Integer)
+ [DEBUG] [2016-08-13 17:11:37][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [INFO] [2016-08-13 17:11:41][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [DEBUG] [2016-08-13 17:11:41][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip, login_state )values ( ?, ?, ?, ? ) 
+ [DEBUG] [2016-08-13 17:11:41][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-13 17:11:41(String), 0:0:0:0:0:0:0:1(String), 1(Integer)
+ [DEBUG] [2016-08-13 17:11:41][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
  

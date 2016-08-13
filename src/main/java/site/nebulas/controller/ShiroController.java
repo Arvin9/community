@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import site.nebulas.beans.LogLogin;
 import site.nebulas.beans.User;
 import site.nebulas.service.LogLoginService;
@@ -26,10 +25,10 @@ import site.nebulas.util.DateUtil;
 
 /**
  * @author Caihonghui
- * @since 20160808
- * @version 20160811添加登陆日志
- * 		
- * @
+ * @version 0.1
+ * 20160811 添加登陆日志
+ * @version 0.2	
+ * 20160813 登陆成功loginState为1,密码错误为2
  */
 @Controller
 public class ShiroController {
@@ -50,8 +49,6 @@ public class ShiroController {
 		
 		if(userAccount != null && password != null){
 			UsernamePasswordToken token = new UsernamePasswordToken(userAccount,password);
-//			HttpSession session=request.getSession();
-			//session.setAttribute("current",userAccount);
 			Subject subject = SecurityUtils.getSubject();
 			Session session = subject.getSession(); 
 			
@@ -59,6 +56,7 @@ public class ShiroController {
 				 subject.login(token);
 				 logLogin.setUserAccount(userAccount);
 				 logLogin.setLoginIp(session.getHost());//用户登录ip
+				 logLogin.setLoginState(1); //登陆成功
 				 logLogin.setLoginTime(DateUtil.getCurrentSysDate());
 				 logLoginService.insert(logLogin);
 //				 System.out.println("用户是否是通过验证登陆："+subject.isAuthenticated());
@@ -70,6 +68,11 @@ public class ShiroController {
 	        }catch(IncorrectCredentialsException ice){  
 	            System.out.println("对用户[" + userAccount + "]进行登录验证..验证未通过,错误的凭证");  
 	            model.addAttribute("message", "error");
+	            logLogin.setUserAccount(userAccount);
+				logLogin.setLoginIp(session.getHost());//用户登录ip
+				logLogin.setLoginState(2); //密码错误
+				logLogin.setLoginTime(DateUtil.getCurrentSysDate());
+				logLoginService.insert(logLogin);
 	            return "login";
 	        }catch(LockedAccountException lae){  
 	            System.out.println("对用户[" + userAccount + "]进行登录验证..验证未通过,账户已锁定");  
