@@ -45,24 +45,25 @@
 				<%-- /pannel --%>
 		  	</div>
 		  	<div class="col-sm-3">
-		  		<%--  --%>
+		  		<%-- showDailySentence  --%>
 		  		<div class="thumbnail">
 			    	<img src="http://image.wufazhuce.com/Fgxm1O_Gi9ff9K5qx5GawiapTAhR" alt="...">
 			    	<div class="caption">
-			    		<h3>Thumbnail label</h3>
-			        	<p>...</p>
+			    		<h3 id="dailySentenceId">每日一句</h3>
+			        	<p id="dailySentence"></p>
 			        	<p class="pager">
-			        		<a href="" class="btn btn-danger" role="button">like</a> 
-			        		<a href="" class="btn btn-warning" role="button">dislike</a>
+			        		<a onclick="dailySentenceLike()" class="btn btn-danger" role="button">like</a> 
+			        		<a onclick="dailySentenceDislike()" class="btn btn-warning" role="button">dislike</a>
 			        	</p>
 			      	</div>
 			    </div>
-		  		<%--  --%>
+		  		<%-- /showDailySentence --%>
 		  	</div>
 		</div>
 <script>
 	$(function(){
 		getExercises();
+		showDailySentence();
 	});
 	
 	function getExercises(){
@@ -99,10 +100,26 @@
 				}
 			}
 		});
-		
-		
+	}
+	
+	function showDailySentence(){
+		$.get("getDailySentence", function(data) {
+			$("#dailySentenceId" ).val(data.dailySentenceId);
+			$("#dailySentence" ).text(data.dailySentence);
+		});
 	}
 
+	function dailySentenceLike(){
+		$.post("dailySentenceLike", { dailySentenceId: $("#dailySentenceId" ).val()},function(data) {
+			showDailySentence();
+		});
+	}
+	
+	function dailySentenceDislike(){
+		$.post("dailySentenceDislike", { dailySentenceId: $("#dailySentenceId" ).val()},function(data) {
+			showDailySentence();
+		});
+	}
 </script>
 
 		<%-- 页面修改内容块end  --%>

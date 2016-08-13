@@ -2,6 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.nebulas.dao.DailySentenceDao">
 
+	<select id="getDailySentence" resultType="DailySentence">
+		select 
+			daily_sentence_id dailySentenceId,
+			daily_sentence dailySentence
+		from daily_sentence 
+		ORDER BY daily_sentence_show_times ASC
+		limit 1
+	</select>
+	
 	<select id="getDailySentenceByParm" resultType="DailySentence">
 		select 
 			id,
@@ -13,4 +22,24 @@
 		limit 1
 	
 	</select>
+	
+	<insert id="insertDailySentenceHobby">
+		insert into daily_sentence_hobby (
+			daily_sentence_id,
+			user_account,
+			daily_sentence_hobby_add_time,
+			daily_sentence_hobby
+		)values (
+			#{dailySentenceId},
+			#{userAccount},
+			#{dailySentenceHobbyAddTime},
+			#{dailySentenceHobby}
+		)
+	</insert>
+	
+	<update id="updateDailySentenceShowTimes">
+		update daily_sentence
+		set daily_sentence_show_times = daily_sentence_show_times + 1
+		where daily_sentence_id = #{dailySentenceId}
+	</update>
 </mapper>

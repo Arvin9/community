@@ -12,8 +12,32 @@ import site.nebulas.dao.DailySentenceDao;
 public class DailySentenceService {
 	@Resource
 	private DailySentenceDao dailySentenceDao;
+	/**
+	 * @author CaiHonghui
+	 * @version 0.2
+	 * 20160813 以展示次数为升序，查出一条DailySentence
+	 */
+	public DailySentence getDailySentence(){
+		return dailySentenceDao.getDailySentence();
+	}
 	
 	public List<DailySentence> getDailySentenceByParm(DailySentence dailySentence){
 		return dailySentenceDao.getDailySentenceByParm(dailySentence);
+	}
+	/**
+	 * @author CaiHonghui
+	 * @version 0.1
+	 * 20160813 写入一条DailySentenceHobby
+	 */
+	public void insertDailySentenceHobby(DailySentence dailySentence){
+		dailySentenceDao.insertDailySentenceHobby(dailySentence);
+	}
+	/**
+	 * @author CaiHonghui
+	 * @version 0.1
+	 * 20160813 更新dailySentenceShowTimes
+	 */
+	public void updateDailySentence(DailySentence dailySentence){
+		dailySentenceDao.updateDailySentenceShowTimes(dailySentence);
 	}
 }
