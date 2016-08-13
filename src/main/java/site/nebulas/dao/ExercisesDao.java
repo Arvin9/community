@@ -6,6 +6,8 @@ import site.nebulas.beans.Exercises;
 
 
 public interface ExercisesDao {
-	public Map<String,String> getExercisesByParm(Exercises exercises);
+	public Exercises getExercisesById(Exercises exercises);
 	public Map<String,String> getExercisesByUserAccount(String userAccount);
+	
+	public void insertAnswerRecord(Exercises exercises);
 }

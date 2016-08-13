@@ -5,7 +5,9 @@
 * 留言板
 * 留言板的文本分析
 * tomcat域名解析
-* 答题表的设计、已答题和未答题的逻辑关系
+* 富文本
+* bootstrap的徽章可用来做消息提示
+* bootstrap缩略图
 
 ## Notice
 * 用户名必须唯一
@@ -22,3 +24,7 @@
 * 登陆成功日志
 * exercises.jsp可以向controller传用户账号，controller可以返回json信息给exercises.jsp
 * 题目通过ajax请求，用用户账号区别
+
+## 20160813
+* 答题验证与插入记录
+* 每日一句页面

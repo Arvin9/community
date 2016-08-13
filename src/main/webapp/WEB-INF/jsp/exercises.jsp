@@ -9,21 +9,21 @@
 		  	<div class="col-sm-6">
 		  		<%-- pannel --%>
 				<div class="panel panel-info">
-					<div class="panel-heading">Panel heading</div>
+					<div class="panel-heading" id="exercisesTitle"></div>
 					<form class="form-horizontal">
 						<div class="form-group">
 							<input id="exercisesId" hidden="hidden"/>
 						</div>
-						<div class="form-group">
-						 	<label class="col-sm-2 control-label" >标题</label>
-						    <div class="col-sm-8">
-						    	<p class="form-control-static" id="exercisesTitle"></p>
-						    </div>
-						 </div>
+						
 						 <div class="form-group">
 						 	<label class="col-sm-2 control-label" >内容</label>
 						    <div class="col-sm-8">
-						    	<p class="form-control-static" id="exercisesContent"></p>
+						    	<!--  <div class="form-control" id="exercisesContent">
+						    	</div>
+						    	-->
+						    	<pre class="pre-scrollable" id="exercisesContent">
+						    	</pre>
+						    	
 						    </div>
 						 </div>
 						 <div class="form-group">
@@ -44,7 +44,21 @@
 				</div>
 				<%-- /pannel --%>
 		  	</div>
-		  	<div class="col-sm-3"></div>
+		  	<div class="col-sm-3">
+		  		<%--  --%>
+		  		<div class="thumbnail">
+			    	<img src="http://image.wufazhuce.com/Fgxm1O_Gi9ff9K5qx5GawiapTAhR" alt="...">
+			    	<div class="caption">
+			    		<h3>Thumbnail label</h3>
+			        	<p>...</p>
+			        	<p class="pager">
+			        		<a href="" class="btn btn-danger" role="button">like</a> 
+			        		<a href="" class="btn btn-warning" role="button">dislike</a>
+			        	</p>
+			      	</div>
+			    </div>
+		  		<%--  --%>
+		  	</div>
 		</div>
 <script>
 	$(function(){
@@ -55,9 +69,6 @@
 		$.ajax({
 			url : "${ctx}/getExercisesByUserAccount",
 			type : "GET",
-			data : {
-				userAccount : $('#topUserAccount').text()
-			},
 			success: function(data){
 				if(!data.data){
 					alert("没有题目了");
@@ -72,8 +83,24 @@
 		});
 	}
 	function submitExercises(){
-		alert($('#exercisesId').val());
-		alert($('#exercisesAnswer').val());
+		$.ajax({
+			url : "${ctx}/submitExercises",
+			type : "POST",
+			data : {
+				exercisesId : $('#exercisesId').val(),
+				exercisesAnswer :$('#exercisesAnswer').val()
+			},
+			success: function(data){
+				if(200 == data.status){
+					alert(data.msg);
+					console.log(data);
+				}else{
+					alert(data.msg);
+				}
+			}
+		});
+		
+		
 	}
 
 </script>

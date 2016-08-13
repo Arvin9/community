@@ -10,10 +10,30 @@ public class ExercisesService {
 	@Resource
 	private ExercisesDao exercisesDao;
 	
-	public Map<String,String> getExercisesByParm(Exercises exercises){
-		return exercisesDao.getExercisesByParm(exercises);
+	/**
+	 * @author CaiHonghui
+	 * @since 0.1
+	 * 20160813  根据id查询一条Exercises记录
+	 * 
+	 * */
+	public Exercises getExercisesById(Exercises exercises){
+		return exercisesDao.getExercisesById(exercises);
 	}
+	
+	/**
+	 * @author CaiHonghui
+	 * @since 0.1
+	 * 20160813 根据用户名连表查询一条未做过的记录
+	 * */
 	public Map<String,String> getExercisesByUserAccount(String userAccount){
 		return exercisesDao.getExercisesByUserAccount(userAccount);
+	}
+	/**
+	 * @author CaiHonghui
+	 * @since 0.1
+	 * 20160813 插入答题记录
+	 * */
+	public void insertAnswerRecord(Exercises exercises){
+		exercisesDao.insertAnswerRecord(exercises);
 	}
 }

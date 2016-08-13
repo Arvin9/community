@@ -7,6 +7,12 @@ public class Exercises {
 	private String exercisesAnswer;
 	private Integer exercisesCount;
 	private Integer exercisesCorrectCount;
+	
+	//答题记录
+	private Integer exercisesAnswerId;
+	private String userAccount;
+	private String exercisesAnswerTime;
+	
 	public Integer getExercisesId() {
 		return exercisesId;
 	}
@@ -42,6 +48,24 @@ public class Exercises {
 	}
 	public void setExercisesCorrectCount(Integer exercisesCorrectCount) {
 		this.exercisesCorrectCount = exercisesCorrectCount;
+	}
+	public Integer getExercisesAnswerId() {
+		return exercisesAnswerId;
+	}
+	public void setExercisesAnswerId(Integer exercisesAnswerId) {
+		this.exercisesAnswerId = exercisesAnswerId;
+	}
+	public String getUserAccount() {
+		return userAccount;
+	}
+	public void setUserAccount(String userAccount) {
+		this.userAccount = userAccount;
+	}
+	public String getExercisesAnswerTime() {
+		return exercisesAnswerTime;
+	}
+	public void setExercisesAnswerTime(String exercisesAnswerTime) {
+		this.exercisesAnswerTime = exercisesAnswerTime;
 	}
 	
 	
