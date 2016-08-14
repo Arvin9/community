@@ -47,9 +47,9 @@
 		  	<div class="col-sm-3">
 		  		<%-- showDailySentence  --%>
 		  		<div class="thumbnail">
-			    	<img src="http://image.wufazhuce.com/Fgxm1O_Gi9ff9K5qx5GawiapTAhR" alt="...">
+			    	<img id ="dailySentenceUrl" style="filter:chroma(color=#ffffff)" src="" alt="...">
 			    	<div class="caption">
-			    		<h3 id="dailySentenceId">每日一句</h3>
+			    		<h3 id="dailySentenceId" style="text-align:center"><span style="color:#9932CC">每日一句</span></h3>
 			        	<p id="dailySentence"></p>
 			        	<p class="pager">
 			        		<a onclick="dailySentenceLike()" class="btn btn-danger" role="button">like</a> 
@@ -103,9 +103,10 @@
 	}
 	
 	function showDailySentence(){
-		$.get("getDailySentence", function(data) {
-			$("#dailySentenceId" ).val(data.dailySentenceId);
-			$("#dailySentence" ).text(data.dailySentence);
+		$.get('getDailySentence', function(data) {
+			$('#dailySentenceId').val(data.dailySentenceId);
+			$('#dailySentence').text(data.dailySentence);
+			$('#dailySentenceUrl').attr('src',data.dailySentenceUrl);
 		});
 	}
 

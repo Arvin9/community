@@ -5,7 +5,8 @@
 	<select id="getDailySentence" resultType="DailySentence">
 		select 
 			daily_sentence_id dailySentenceId,
-			daily_sentence dailySentence
+			daily_sentence dailySentence,
+			daily_sentence_url dailySentenceUrl
 		from daily_sentence 
 		ORDER BY daily_sentence_show_times ASC
 		limit 1

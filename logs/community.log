@@ -7808,4 +7808,265 @@ Caused by: java.lang.IllegalArgumentException: Mapped Statements collection alre
  [DEBUG] [2016-08-13 18:56:06][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
  [DEBUG] [2016-08-13 18:56:06][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
  [DEBUG] [2016-08-13 18:56:07][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-13 19:01:00][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-13 19:01:00][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-13 19:01:00][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-13 19:01:00][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-13 19:01:00][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-13 19:01:00][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-13 19:01:00][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [INFO] [2016-08-14 11:51:50][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2016-08-14 11:51:50][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sun Aug 14 11:51:50 CST 2016]; root of context hierarchy
+ [INFO] [2016-08-14 11:51:50][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2016-08-14 11:51:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-shiro-web.xml]
+ [INFO] [2016-08-14 11:51:52][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2016-08-14 11:51:52][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-14 11:51:52][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userDao' of type [class com.sun.proxy.$Proxy13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:53][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userService' of type [class site.nebulas.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [passwordRetryCache]
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'credentialsMatcher' of type [class site.nebulas.credentials.RetryLimitHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.apache.shiro.realm.AuthorizingRealm]No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'userRealm' of type [class site.nebulas.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authenticationCache]
+ [INFO] [2016-08-14 11:51:54][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [authorizationCache]
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#5366575d' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]Bean 'util:map#5366575d' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ [INFO] [2016-08-14 11:51:54][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 4811 ms
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sun Aug 14 11:51:55 CST 2016]; parent: Root WebApplicationContext
+ [INFO] [2016-08-14 11:51:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO] [2016-08-14 11:51:55][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/book],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.BookController.operationLog()
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/bookQueryByParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.BookController.bookQueryByParam(site.nebulas.beans.Book)
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getDailySentence],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.DailySentenceController.getDailySentence()
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/dailySentenceLike],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.DailySentenceController.dailySentenceLike(site.nebulas.beans.DailySentence)
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/dailySentenceDislike],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object site.nebulas.controller.DailySentenceController.dailySentenceDislike(site.nebulas.beans.DailySentence)
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/submitExercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.submitExercises(site.nebulas.beans.Exercises)
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getExercisesByUserAccount],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public site.nebulas.beans.Response site.nebulas.controller.ExercisesController.getExercisesByUserAccount()
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.index()
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.login()
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/exercises],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView site.nebulas.controller.PageController.exercises()
+ [INFO] [2016-08-14 11:51:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/loginIn],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String site.nebulas.controller.ShiroController.loginIn(org.springframework.ui.Model,site.nebulas.beans.User)
+ [INFO] [2016-08-14 11:51:56][net.sf.ehcache.util.UpdateChecker]New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+ [INFO] [2016-08-14 11:51:57][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO] [2016-08-14 11:51:57][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO] [2016-08-14 11:51:57][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 2918 ms
+ [INFO] [2016-08-14 11:52:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Enabling session validation scheduler...
+ [INFO] [2016-08-14 11:52:11][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: qtp507084503-20
+ [INFO] [2016-08-14 11:52:11][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+ [INFO] [2016-08-14 11:52:11][org.quartz.core.QuartzScheduler]Quartz Scheduler v.1.6.1 created.
+ [INFO] [2016-08-14 11:52:11][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+ [INFO] [2016-08-14 11:52:11][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+ [INFO] [2016-08-14 11:52:11][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 1.6.1
+ [INFO] [2016-08-14 11:52:11][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+ [INFO] [2016-08-14 11:52:11][org.apache.shiro.cache.ehcache.EhCacheManager]Using existing EHCache named [shiro-activeSessionCache]
+ [INFO] [2016-08-14 11:52:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-14 11:52:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [INFO] [2016-08-14 11:52:17][site.nebulas.controller.ShiroController]nebula 819cf1304065c4ae95f2babaf8a03fd7
+ [DEBUG] [2016-08-14 11:52:18][site.nebulas.dao.UserDao.findByUserAccount]==>  Preparing: select user_id userId, role_id roleId, user_account userAccount, password password, salt salt, real_name realName, add_time addTime, is_lock isLock, add_man addMan, is_delete isDelete from user where user_account = ? 
+ [DEBUG] [2016-08-14 11:52:18][site.nebulas.dao.UserDao.findByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 11:52:18][site.nebulas.dao.UserDao.findByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-14 11:52:18][site.nebulas.dao.LogLoginDao.insert]==>  Preparing: insert into log_login ( user_account, login_time, login_ip, login_state )values ( ?, ?, ?, ? ) 
+ [DEBUG] [2016-08-14 11:52:18][site.nebulas.dao.LogLoginDao.insert]==> Parameters: nebula(String), 2016-08-14 11:52:18(String), 0:0:0:0:0:0:0:1(String), 1(Integer)
+ [DEBUG] [2016-08-14 11:52:18][site.nebulas.dao.LogLoginDao.insert]<==    Updates: 1
+ [WARN] [2016-08-14 11:52:21][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'SpringMVC'
+ [DEBUG] [2016-08-14 11:52:22][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 11:52:22][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 11:52:22][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 11:52:23][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 11:52:23][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 11:52:23][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 11:52:23][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 11:54:15][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 11:54:15][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 11:54:15][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 11:54:15][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 11:54:15][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 11:54:15][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 11:54:15][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 11:54:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 11:54:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 11:54:29][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 11:54:29][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 11:54:29][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 11:54:29][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 11:54:29][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 11:56:27][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 11:56:27][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 11:56:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 11:56:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 11:56:27][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 11:56:27][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 11:56:27][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 11:58:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 11:58:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 11:58:56][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 11:58:56][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 11:58:56][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 11:58:56][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 11:58:56][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:14:46][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:14:46][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:14:46][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:14:46][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:14:46][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:14:46][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:14:46][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]==>  Preparing: insert into daily_sentence_hobby ( daily_sentence_id, user_account, daily_sentence_hobby_add_time, daily_sentence_hobby )values ( ?, ?, ?, ? ) 
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]==> Parameters: 8(Integer), nebula(String), 2016-08-14 12:15:09(String), 1(Integer)
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]<==    Updates: 1
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]==>  Preparing: update daily_sentence set daily_sentence_show_times = daily_sentence_show_times + 1 where daily_sentence_id = ? 
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]==> Parameters: 8(Integer)
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]<==    Updates: 1
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:15:09][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]==>  Preparing: insert into daily_sentence_hobby ( daily_sentence_id, user_account, daily_sentence_hobby_add_time, daily_sentence_hobby )values ( ?, ?, ?, ? ) 
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]==> Parameters: 9(Integer), nebula(String), 2016-08-14 12:15:23(String), 1(Integer)
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]<==    Updates: 1
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]==>  Preparing: update daily_sentence set daily_sentence_show_times = daily_sentence_show_times + 1 where daily_sentence_id = ? 
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]==> Parameters: 9(Integer)
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]<==    Updates: 1
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:15:23][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:16:41][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:16:41][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:16:41][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:16:41][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:16:41][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:16:41][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:16:41][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:17:48][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:17:48][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:17:48][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:17:48][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:17:48][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:17:48][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:17:48][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:19:04][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:19:04][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:19:04][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:19:04][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:19:04][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:19:04][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:19:04][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:19:43][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:19:43][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:19:43][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:19:43][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:19:43][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:19:43][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:19:43][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:20:11][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:20:11][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:20:11][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:20:11][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:20:11][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:20:11][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:20:11][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:20:25][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:20:25][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:20:25][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:20:25][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:20:25][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:20:25][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:20:25][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:20:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:20:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:20:37][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:20:37][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:20:37][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [DEBUG] [2016-08-14 12:20:37][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [INFO] [2016-08-14 12:20:37][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:21:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:21:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:21:09][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:21:09][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:21:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:21:09][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:21:09][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [INFO] [2016-08-14 12:22:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-14 12:22:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  No sessions were stopped.
+ [DEBUG] [2016-08-14 12:22:13][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:22:13][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:22:13][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:22:13][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:22:13][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:22:13][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:22:13][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:22:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:22:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:22:35][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:22:35][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:22:35][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:22:35][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:22:35][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:22:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:22:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:22:54][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:22:54][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:22:54][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:22:54][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:22:54][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:23:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:23:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:23:09][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:23:09][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:23:09][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:23:09][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:23:09][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:24:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:24:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:24:05][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:24:05][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:24:05][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:24:05][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:24:05][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:24:20][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:24:20][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:24:20][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:24:20][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:24:20][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:24:20][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:24:20][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:24:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:24:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:24:44][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:24:44][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:24:44][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:24:44][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:24:44][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:25:10][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==>  Preparing: select exercises_id exercisesId, exercises_title exercisesTitle, exercises_content exercisesContent from exercises WHERE exercises_id not in(SELECT exercises_id FROM exercises_answer WHERE user_account = ?) limit 1 
+ [DEBUG] [2016-08-14 12:25:10][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]==> Parameters: nebula(String)
+ [DEBUG] [2016-08-14 12:25:10][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:25:10][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:25:10][site.nebulas.dao.ExercisesDao.getExercisesByUserAccount]<==      Total: 1
+ [INFO] [2016-08-14 12:25:10][site.nebulas.controller.ExercisesController]{exercisesId=1, exercisesTitle=hello, exercisesContent=hehhhhh}
+ [DEBUG] [2016-08-14 12:25:10][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]==>  Preparing: insert into daily_sentence_hobby ( daily_sentence_id, user_account, daily_sentence_hobby_add_time, daily_sentence_hobby )values ( ?, ?, ?, ? ) 
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]==> Parameters: 10(Integer), nebula(String), 2016-08-14 12:25:13(String), 1(Integer)
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.insertDailySentenceHobby]<==    Updates: 1
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]==>  Preparing: update daily_sentence set daily_sentence_show_times = daily_sentence_show_times + 1 where daily_sentence_id = ? 
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]==> Parameters: 10(Integer)
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.updateDailySentenceShowTimes]<==    Updates: 1
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.getDailySentence]==>  Preparing: select daily_sentence_id dailySentenceId, daily_sentence dailySentence, daily_sentence_url dailySentenceUrl from daily_sentence ORDER BY daily_sentence_show_times ASC limit 1 
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.getDailySentence]==> Parameters: 
+ [DEBUG] [2016-08-14 12:25:13][site.nebulas.dao.DailySentenceDao.getDailySentence]<==      Total: 1
+ [INFO] [2016-08-14 12:52:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-14 12:52:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  [1] sessions were stopped.
+ [INFO] [2016-08-14 13:22:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Validating all active sessions...
+ [INFO] [2016-08-14 13:22:11][org.apache.shiro.session.mgt.AbstractValidatingSessionManager]Finished session validation.  [1] sessions were stopped.
  

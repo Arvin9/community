@@ -10,6 +10,7 @@ public class DailySentence {
 	private String dailySentence;
 	private String dailySentenceAddTime;
 	private Integer dailySentenceShowTimes;
+	private String dailySentenceUrl;
 	
 	//hobby
 	private Integer dailySentenceHobbyId;
@@ -63,6 +64,12 @@ public class DailySentence {
 	}
 	public void setDailySentenceHobby(int dailySentenceHobby) {
 		this.dailySentenceHobby = dailySentenceHobby;
+	}
+	public String getDailySentenceUrl() {
+		return dailySentenceUrl;
+	}
+	public void setDailySentenceUrl(String dailySentenceUrl) {
+		this.dailySentenceUrl = dailySentenceUrl;
 	}
 	
 	
