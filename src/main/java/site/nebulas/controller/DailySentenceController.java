@@ -56,7 +56,7 @@ public class DailySentenceController {
 		//更新dailySentenceShowTimes
 		dailySentenceService.updateDailySentence(dailySentence);
 		
-		rs.setStstus(200);
+		rs.setRet(200);
 		rs.setMsg("success");
 		return rs;
 	}
@@ -81,7 +81,7 @@ public class DailySentenceController {
 		//更新dailySentenceShowTimes
 		dailySentenceService.updateDailySentence(dailySentence);
 		
-		rs.setStstus(200);
+		rs.setRet(200);
 		rs.setMsg("success");
 		return rs;
 	}

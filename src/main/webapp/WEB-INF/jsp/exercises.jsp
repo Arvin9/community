@@ -32,14 +32,24 @@
 						    	<input id="exercisesAnswer" class="form-control" placeholder="请输入答案"/>
 						    </div>
 						 </div>
+						 <div class="form-group">
+						 	<label class="col-sm-2 control-label" ></label>
+						    <div class="col-sm-8">
+						    	<div id="exercisesHint" class="alert alert-warning" hidden="hidden"></div>
+						    </div>
+						 </div>
+						 <div class="form-group">
+						 	<label class="col-sm-2 control-label" ></label>
+						    <div class="col-sm-8">
+						    	<div id="exercisesError" class="alert alert-danger alert-dismissible" hidden="hidden"></div>
+						    </div>
+						 </div>
 						<div class="form-group">
 							<div class="col-sm-1 control-label"></div>
 							<div class="col-sm-10 control-label">
-								<button type="button " class="btn btn-block btn-info" onclick="submitExercises()">提交</button>
+								<a role="button"  class="btn btn-block btn-info" onclick="submitExercises()">提交</a>
 							</div>
 						</div>
-							
-				
 					</form>
 				</div>
 				<%-- /pannel --%>
@@ -71,35 +81,51 @@
 			url : "getExercisesByUserAccount",
 			type : "GET",
 			success: function(data){
-				if(!data.data){
-					alert("没有题目了");
-					return;
+				if(230 == data.ret){
+					$('#exercisesError').text(data.msg);
+					$('#exercisesError').show();
+					$('#exercisesId').val("");
+					$('#exercisesTitle').text("没有题目了!");
+					$('#exercisesContent').text("没有题目了,请联系管理员!");
 				}
-				var obj = $.parseJSON(data.data);
-				
-				$('#exercisesId').val(obj.exercisesId);
-				$('#exercisesTitle').text(obj.exercisesTitle);
-				$('#exercisesContent').text(obj.exercisesContent);
+				if(200 == data.ret){
+					var obj = $.parseJSON(data.data);
+					$('#exercisesId').val(obj.exercisesId);
+					$('#exercisesTitle').text(obj.exercisesTitle);
+					$('#exercisesContent').text(obj.exercisesContent);
+					$('#exercisesHint').text(obj.exercisesHint);
+				}
 			}
 		});
 	}
 	function submitExercises(){
-		$.ajax({
-			url : "submitExercises",
-			type : "POST",
-			data : {
-				exercisesId : $('#exercisesId').val(),
-				exercisesAnswer :$('#exercisesAnswer').val()
-			},
-			success: function(data){
-				if(200 == data.status){
-					alert(data.msg);
-					console.log(data);
-				}else{
-					alert(data.msg);
+		var exercisesAnswer = $('#exercisesAnswer').val();
+		if( "" == exercisesAnswer){
+			$('#exercisesHint').show();
+		}else{
+			$.ajax({
+				url : "submitExercises",
+				type : "POST",
+				data : {
+					exercisesId : $('#exercisesId').val(),
+					exercisesAnswer : exercisesAnswer
+				},
+				success: function(data){
+					var data = data;
+					console.info(data);
+					console.info(data.msg);
+					if(200 == data.ret){
+						$.messager.alert("消息", "回答正确,进入下一题.");
+						getExercises();
+					}
+					if(400 == data.ret){
+						$('#exercisesError').text(data.msg);
+						$('#exercisesHint').show();
+						$('#exercisesError').show();
+					}
 				}
-			}
-		});
+			});
+		}
 	}
 	
 	function showDailySentence(){

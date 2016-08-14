@@ -17,7 +17,8 @@
 		select 
 			exercises_id exercisesId,
 			exercises_title exercisesTitle,
-			exercises_content exercisesContent
+			exercises_content exercisesContent,
+			exercises_hint exercisesHint
 		from exercises 
 		WHERE exercises_id not in(SELECT exercises_id
 			FROM exercises_answer

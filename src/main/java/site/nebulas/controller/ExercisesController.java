@@ -30,7 +30,9 @@ public class ExercisesController {
 	 * @author CaiHonghui
 	 * @since 0.1
 	 * 20160813   根据用户名获取题目
-	 * 
+	 * 状态码：
+	 *    230 成功请求但是没有题目
+	 *    200 成功请求并返回题目
 	 * */
 	@RequestMapping("getExercisesByUserAccount")
 	@ResponseBody
@@ -44,12 +46,12 @@ public class ExercisesController {
 		Map<String,String> map = exercisesService.getExercisesByUserAccount(userAccount);
 		
 		if(null == map){
-			rs.setStstus(130);
-			rs.setMsg("没有题目了");
+			rs.setRet(230);
+			rs.setMsg("没有题目了!");
 			return rs;
 		}
 		
-		rs.setStstus(200);
+		rs.setRet(200);
 		rs.setMsg("success");
 		rs.setData(JSON.toJSONString(map));
 		logger.info(map.toString());
@@ -60,6 +62,10 @@ public class ExercisesController {
 	 * @author CaiHonghui
 	 * @since 0.1
 	 * 20160813 验证用户提交答案是否正确
+	 * 
+	 * 状态码：
+	 * 	   200   答案正确
+	 * 	   400  答案为空，或不正确
 	 * */
 	@RequestMapping("submitExercises")
 	@ResponseBody
@@ -72,24 +78,25 @@ public class ExercisesController {
 		//获取用户答案
 		String exercisesAnswer = exercises.getExercisesAnswer();
 		if(null == exercisesAnswer || "".equals(exercisesAnswer)){
-			rs.setStstus(400);
-			rs.setMsg("答案不能为空");
+			rs.setRet(400);
+			rs.setMsg("答案不能为空！");
 			return rs;
 		}
 		
 		//查询正确答案
 		Exercises correct = exercisesService.getExercisesById(exercises);
 		String correctAnswer = correct.getExercisesAnswer();
-		System.out.println("correctAnswer"+correctAnswer);
 		//验证答案正确性
 		if(exercisesAnswer.equals(correctAnswer)){
 			//将答题记录写入数据库
 			exercises.setUserAccount(userAccount);
 			exercises.setExercisesAnswerTime(DateUtil.getCurrentSysDate());
 			exercisesService.insertAnswerRecord(exercises);
-			System.out.println("correct");
-			rs.setStstus(200);
+			rs.setRet(200);
 			rs.setMsg("success");
+		}else{
+			rs.setRet(400);
+			rs.setMsg("答案错误，请看提示！");
 		}
 		return rs;
 	}

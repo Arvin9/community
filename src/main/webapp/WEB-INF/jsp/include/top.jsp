@@ -25,6 +25,7 @@
 		
 	<script src="${ctx}/resources/jquery/1.11.1/jquery.min.js"></script>
 	<script src="${ctx}/resources/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="${ctx}/resources/bootstrap-jquery/jquery.bootstrap.min.js"></script>
 	
 </head>
 <body>

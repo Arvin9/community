@@ -7,6 +7,7 @@ public class Exercises {
 	private String exercisesAnswer;
 	private Integer exercisesCount;
 	private Integer exercisesCorrectCount;
+	private String exercisesHint;
 	
 	//答题记录
 	private Integer exercisesAnswerId;
@@ -66,6 +67,12 @@ public class Exercises {
 	}
 	public void setExercisesAnswerTime(String exercisesAnswerTime) {
 		this.exercisesAnswerTime = exercisesAnswerTime;
+	}
+	public String getExercisesHint() {
+		return exercisesHint;
+	}
+	public void setExercisesHint(String exercisesHint) {
+		this.exercisesHint = exercisesHint;
 	}
 	
 	

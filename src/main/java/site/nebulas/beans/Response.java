@@ -6,16 +6,17 @@ package site.nebulas.beans;
  * @version 0.1
  */
 public class Response {
-	private Integer ststus;
-	private String msg;
-	private Object data;
-	private String hash;
+	private Integer ret; //返回状态
+	private String msg;  //返回信息
+	private Object data; //返回数据
+	private String hash; //hash值
 	
-	public Integer getStstus() {
-		return ststus;
+	
+	public Integer getRet() {
+		return ret;
 	}
-	public void setStstus(Integer ststus) {
-		this.ststus = ststus;
+	public void setRet(Integer ret) {
+		this.ret = ret;
 	}
 	public String getMsg() {
 		return msg;
