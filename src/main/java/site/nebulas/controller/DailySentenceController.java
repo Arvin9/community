@@ -54,7 +54,7 @@ public class DailySentenceController {
 		dailySentence.setUserAccount(userAccount);
 		dailySentenceService.insertDailySentenceHobby(dailySentence);
 		//更新dailySentenceShowTimes
-		dailySentenceService.updateDailySentence(dailySentence);
+		dailySentenceService.updateDailySentenceLike(dailySentence);
 		
 		rs.setRet(200);
 		rs.setMsg("success");
@@ -79,7 +79,7 @@ public class DailySentenceController {
 		dailySentence.setUserAccount(userAccount);
 		dailySentenceService.insertDailySentenceHobby(dailySentence);
 		//更新dailySentenceShowTimes
-		dailySentenceService.updateDailySentence(dailySentence);
+		dailySentenceService.updateDailySentenceDisLike(dailySentence);
 		
 		rs.setRet(200);
 		rs.setMsg("success");

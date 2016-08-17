@@ -34,10 +34,21 @@ public class DailySentenceService {
 	}
 	/**
 	 * @author CaiHonghui
-	 * @version 0.1
+	 * @version 0.2
 	 * 20160813 更新dailySentenceShowTimes
+	 * 20160818 多更新like值
 	 */
-	public void updateDailySentence(DailySentence dailySentence){
-		dailySentenceDao.updateDailySentenceShowTimes(dailySentence);
+	public void updateDailySentenceLike(DailySentence dailySentence){
+		dailySentenceDao.updateDailySentenceLike(dailySentence);
+	}
+	
+	/**
+	 * @author CaiHonghui
+	 * @version 0.2
+	 * 20160813 更新dailySentenceShowTimes
+	 * 20160818 多更新like值
+	 */
+	public void updateDailySentenceDisLike(DailySentence dailySentence){
+		dailySentenceDao.updateDailySentenceDisLike(dailySentence);
 	}
 }

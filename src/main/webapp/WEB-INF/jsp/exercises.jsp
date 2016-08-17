@@ -62,8 +62,14 @@
 			    		<h3 id="dailySentenceId" style="text-align:center"><span style="color:#9932CC">每日一句</span></h3>
 			        	<p id="dailySentence"></p>
 			        	<p class="pager">
-			        		<a onclick="dailySentenceLike()" class="btn btn-danger" role="button">like</a> 
-			        		<a onclick="dailySentenceDislike()" class="btn btn-warning" role="button">dislike</a>
+			        		<a onclick="dailySentenceLike()" class="btn btn-danger" role="button">
+			        			<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+	  							<span class="badge" id="sentenceLike"></span>
+			        		</a> 
+			        		<a onclick="dailySentenceDislike()" class="btn btn-warning" role="button">
+			        			<span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
+			        			<span class="badge" id="sentenceDisLike"></span>
+			        		</a>
 			        	</p>
 			      	</div>
 			    </div>
@@ -133,6 +139,9 @@
 			$('#dailySentenceId').val(data.dailySentenceId);
 			$('#dailySentence').text(data.dailySentence);
 			$('#dailySentenceUrl').attr('src',data.dailySentenceUrl);
+			$('#sentenceLike').text(data.dailySentenceLike);
+			$('#sentenceDisLike').text(data.dailySentenceDisLike);
+			
 		});
 	}
 

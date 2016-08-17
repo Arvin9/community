@@ -6,7 +6,9 @@
 		select 
 			daily_sentence_id dailySentenceId,
 			daily_sentence dailySentence,
-			daily_sentence_url dailySentenceUrl
+			daily_sentence_url dailySentenceUrl,
+			daily_sentence_like dailySentenceLike,
+			daily_sentence_dislike dailySentenceDisLike
 		from daily_sentence 
 		ORDER BY daily_sentence_show_times ASC
 		limit 1
@@ -38,7 +40,13 @@
 		)
 	</insert>
 	
-	<update id="updateDailySentenceShowTimes">
+	<update id="updateDailySentenceLike">
+		update daily_sentence
+		set daily_sentence_show_times = daily_sentence_show_times + 1,
+			daily_sentence_like = daily_sentence_like + 1 
+		where daily_sentence_id = #{dailySentenceId}
+	</update>
+	<update id="updateDailySentenceDisLike">
 		update daily_sentence
 		set daily_sentence_show_times = daily_sentence_show_times + 1
 		where daily_sentence_id = #{dailySentenceId}

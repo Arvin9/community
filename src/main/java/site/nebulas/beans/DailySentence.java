@@ -11,6 +11,8 @@ public class DailySentence {
 	private String dailySentenceAddTime;
 	private Integer dailySentenceShowTimes;
 	private String dailySentenceUrl;
+	private Integer dailySentenceLike;
+	private Integer dailySentenceDisLike;
 	
 	//hobby
 	private Integer dailySentenceHobbyId;
@@ -70,6 +72,18 @@ public class DailySentence {
 	}
 	public void setDailySentenceUrl(String dailySentenceUrl) {
 		this.dailySentenceUrl = dailySentenceUrl;
+	}
+	public Integer getDailySentenceLike() {
+		return dailySentenceLike;
+	}
+	public void setDailySentenceLike(Integer dailySentenceLike) {
+		this.dailySentenceLike = dailySentenceLike;
+	}
+	public Integer getDailySentenceDisLike() {
+		return dailySentenceDisLike;
+	}
+	public void setDailySentenceDisLike(Integer dailySentenceDisLike) {
+		this.dailySentenceDisLike = dailySentenceDisLike;
 	}
 	
 	

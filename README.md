@@ -6,9 +6,11 @@
 * 留言板的文本分析，wordcloud
 * tomcat域名解析
 * 富文本
-* bootstrap的徽章可用来做消息提示
-* bootstrap缩略图
-* 答题错误提示
+* 图片放大镜功能
+* 注册  !!!!!
+* 忘记密码
+* 邮件
+* 排行榜
 
 ## Notice
 * 用户名必须唯一
@@ -17,6 +19,7 @@
 * button事件会刷新页面
 * $.parseJSON()函数用于将格式完好的JSON字符串转为与之对应的JavaScript对象。
 * 在返回的json数据中不要使用status
+* bootstrap的Glyphicons字体图标需要在resource下建立fonts
 
 
 ## 20160810
@@ -38,3 +41,7 @@
 ## 20160814
 * 使用jieba分词，wordcloud将sentence作出词云，并上传服务器将URL存入数据库
 * 答题的提示、错误提示
+
+## 20160818
+* 使用bootstrap的徽章来显示sentence的like和dislike数值
+* 用户点击like或者dislike会记录
