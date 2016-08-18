@@ -28,7 +28,7 @@ public class PageController {
 	
 	/**
 	 * @author CaiHonghui
-	 * @since 20160810
+	 * @date 20160810
 	 *  首页
 	 */
 	@RequestMapping("index")
@@ -39,7 +39,7 @@ public class PageController {
 	
 	/**
 	 * @author CaiHonghui
-	 * @since 20160810
+	 * @date 20160810
 	 *  登陆页面
 	 */
 	@RequestMapping("login")
@@ -51,12 +51,23 @@ public class PageController {
 	
 	/**
 	 * @author CaiHonghui
-	 * @since 20160810
+	 * @date 20160810
 	 *  练习册页面
 	 */
 	@RequestMapping("exercises")
 	public ModelAndView exercises(){
 		ModelAndView modelAndView = new ModelAndView("exercises");
+		return modelAndView;
+	}
+	
+	/**
+	 * @author CaiHonghui
+	 * @date 20160810
+	 *  练习册页面
+	 */
+	@RequestMapping("signUp")
+	public ModelAndView signUp(){
+		ModelAndView modelAndView = new ModelAndView("signUp");
 		return modelAndView;
 	}
 	

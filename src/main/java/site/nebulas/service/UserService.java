@@ -32,6 +32,15 @@ public class UserService {
     }
 
     /**
+     * 根据用户名查找用户
+     * @param username
+     * @return
+     */
+    public User findByUserAccount(String username) {
+        return userDao.findByUserAccount(username);
+    }
+    
+    /**
      * 创建用户
      * @param user
      */
@@ -72,14 +81,7 @@ public class UserService {
         userDao.uncorrelationRoles(userId, roleIds);
     }
 
-    /**
-     * 根据用户名查找用户
-     * @param username
-     * @return
-     */
-    public User findByUserAccount(String username) {
-        return userDao.findByUserAccount(username);
-    }
+    
 
     /**
      * 根据用户名查找其角色

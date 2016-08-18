@@ -45,3 +45,4 @@
 ## 20160818
 * 使用bootstrap的徽章来显示sentence的like和dislike数值
 * 用户点击like或者dislike会记录
+* jquery.validate验证注册信息，异步验证用户名

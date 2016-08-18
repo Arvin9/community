@@ -4,9 +4,8 @@ import java.util.Set;
 import site.nebulas.beans.User;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * @author CaiHonghui
+ * @date 20160818
  */
 public interface UserDao {
 

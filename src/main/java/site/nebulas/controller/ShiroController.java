@@ -16,7 +16,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import site.nebulas.beans.LogLogin;
+import site.nebulas.beans.Response;
 import site.nebulas.beans.User;
 import site.nebulas.service.LogLoginService;
 import site.nebulas.service.UserService;
@@ -94,6 +97,26 @@ public class ShiroController {
 		return "login";
 	}
 	
+	/**
+	 * @author 用户注册时判断用户名是否已经存在
+	 * @date  20160818
+	 * @since 0.1
+	 *
+	 **/
+	@RequestMapping("hasUserAccount")
+	@ResponseBody
+	public Object hasUserAccount(String userAccount){
+		Response rs = new Response(); 
+		if(null == userService.findByUserAccount(userAccount)){
+			//用户名未被占用时,返回true
+			rs.setRet(200);
+			rs.setMsg("true");
+		}else{
+			rs.setRet(200);
+			rs.setMsg("false");
+		}
+		return rs;
+	}
 }
 
 
