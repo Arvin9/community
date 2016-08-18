@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
 		<div class="container">
 			
-			<form class="form-horizontal form-signin" id="signUpFrom" method="POST">
+			<form class="form-horizontal form-signin" id="signUpFrom" method="POST" action="register">
 				<h2 class="form-signin-heading">
 					Register
 				</h2>
@@ -49,10 +49,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  	<div class="form-group">
 			    	<div class="col-sm-12">
 			      		<input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password">
+			    		<div hidden="hidden">
+			    			<input type="password" class="form-control" id="password" name="password"/>
+			    		</div>
+			    	
 			    	</div>
-			    	<div hidden="hidden">
-			    		<input type="password" class="form-control" id="password"  />
-			    	</div>
+			    	
 			  	</div>
 			  	<div class="form-group">
 			    	<div class="col-sm-12">
@@ -74,8 +76,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	$.validator.setDefaults( {
 		submitHandler: function () {
-			debug:true;
-			alert( "消息提交成功!" );
+			var password = hex_md5($('#inputPassword').val());
+			$('#password').val(password);
 			form.submit();
 		}
 	} );
@@ -88,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			rules: {
 				userAccount:{
 					required: true,
-					minlength: 6,
+					minlength: 5,
 					maxlength: 16,
 					remote: {
 					    url: "hasUserAccount",     //后台处理程序

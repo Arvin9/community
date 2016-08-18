@@ -9,7 +9,8 @@ import site.nebulas.beans.User;
  */
 public interface UserDao {
 
-    public User createUser(User user);
+    public void createUser(User user);
+    
     public void updateUser(User user);
     public void deleteUser(Long userId);
 

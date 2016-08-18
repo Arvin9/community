@@ -98,10 +98,10 @@ public class ShiroController {
 	}
 	
 	/**
-	 * @author 用户注册时判断用户名是否已经存在
+	 * @author 
 	 * @date  20160818
 	 * @since 0.1
-	 *
+	 *	用户注册时判断用户名是否已经存在
 	 **/
 	@RequestMapping("hasUserAccount")
 	@ResponseBody
@@ -117,6 +117,26 @@ public class ShiroController {
 		}
 		return rs;
 	}
+	
+	/**
+	 * @author 
+	 * @date  20160818
+	 * @since 0.1
+	 *  用户注册,创建用户
+	 **/
+	@RequestMapping("register")
+	public Object register(Model model,String userAccount,String email,String password){
+		System.out.println(userAccount);
+		System.out.println(email);
+		System.out.println(password);
+		User user = new User();
+		user.setUserAccount(userAccount);
+		user.setPassword(password);
+		userService.createUser(user);
+		model.addAttribute("message", "ss");
+		return "login";
+	}
+	
 }
 
 

@@ -24,7 +24,7 @@ public class UserService {
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }
-
+    @Resource
     private PasswordHelper passwordHelper;
 
     public void setPasswordHelper(PasswordHelper passwordHelper) {
@@ -44,10 +44,10 @@ public class UserService {
      * 创建用户
      * @param user
      */
-    public User createUser(User user) {
+    public void createUser(User user) {
         //加密密码
         passwordHelper.encryptPassword(user);
-        return userDao.createUser(user);
+        userDao.createUser(user);
     }
 
     /**

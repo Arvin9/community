@@ -36,9 +36,9 @@
 	</select>
 	
 	
-	<insert id="createManager">
-		insert into manager(role_id, manager_account, password, salt, real_name, add_time, is_lock, add_man, balance, is_delete) 
-		values(#{roleId},#{managerAccount},#{password}, #{salt},#{realName},#{addTime},#{isLock},#{addMan},#{balance},#{isDelete})
+	<insert id="createUser">
+		insert into user(role_id,user_account,password,salt,real_name,add_time,is_lock,add_man,is_delete) 
+		values(#{roleId},#{userAccount},#{password}, #{salt},#{realName},#{addTime},#{isLock},#{addMan},#{isDelete})
 	</insert>
 	
 	<update id="update">

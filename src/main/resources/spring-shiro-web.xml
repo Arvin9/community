@@ -99,6 +99,7 @@
             	/hasUserAccount = anon
             	/signUp = anon
                 /index = anon
+                /register = anon
                 /book* = anon
                 /resources/** = anon
                 /unauthorized = anon

@@ -4,6 +4,7 @@ import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
+import org.springframework.stereotype.Service;
 
 import site.nebulas.beans.User;
 
@@ -12,6 +13,7 @@ import site.nebulas.beans.User;
  * <p>Date: 14-1-28
  * <p>Version: 1.0
  */
+@Service
 public class PasswordHelper {
 
     private RandomNumberGenerator randomNumberGenerator = new SecureRandomNumberGenerator();

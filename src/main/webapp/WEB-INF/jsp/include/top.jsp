@@ -68,6 +68,10 @@
 							<li >
 								<a>欢迎游客访问</a>
 							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/signUp">注册</a> 
+							</li>
+							
 							<li> 
 								<a href="${pageContext.request.contextPath}/signIn">登录</a>
 							</li>  

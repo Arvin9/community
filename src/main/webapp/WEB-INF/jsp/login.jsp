@@ -51,6 +51,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$.messager.alert("警告", "无此用户");
 	}else if ("error" == message) {
 		$.messager.alert("警告", "密码错误");
+	}else if ("ss" == message) {
+		$.messager.alert("信息", "注册成功，请登录");
 	}
 	function login() {
 		var password = hex_md5($('#bePassword').val());
