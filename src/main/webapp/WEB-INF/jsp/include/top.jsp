@@ -22,6 +22,8 @@
 	<!-- Bootstrap -->
 	<link href="${ctx}/resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${ctx}/resources/css/footer.css" rel="stylesheet">
+	<!-- chat css -->
+	<link href="<%=path%>/resources/css/chat.css" rel="stylesheet">
 		
 	<script src="${ctx}/resources/jquery/1.11.1/jquery.min.js"></script>
 	<script src="${ctx}/resources/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -57,7 +59,7 @@
 						<a href="${ctx}/exercises">练习册</a>
 					</li>
 					<li>
-						<a href="${ctx}/about">About</a>
+						<a href="${ctx}/serviceRobot">客服机器人</a>
 					</li>
 					<li>
 						<a href="${ctx}/contact">Contact</a>

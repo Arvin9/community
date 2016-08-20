@@ -100,9 +100,9 @@
             	/signUp = anon
                 /index = anon
                 /register = anon
-                /book* = anon
+                /serviceRobot = anon
+                /askRobot = anon
                 /resources/** = anon
-                /unauthorized = anon
                 /login = authc
                 /logout = logout
                 /** = user
