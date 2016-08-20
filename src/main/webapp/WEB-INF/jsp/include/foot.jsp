@@ -1,7 +1,7 @@
 <footer class="footer">
 <p>
 	Web site built for Study by
-	<a href="http://www.arvin.net.cn">Nebula</a>
+	<a href="index">Nebula</a>
 </p>
 <p>
 	<a href="http://www.w3school.com.cn/" target="_blank">W3school</a>	&nbsp;|

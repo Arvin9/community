@@ -2,6 +2,8 @@ package site.nebulas.controller;
 
 import javax.annotation.Resource;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -9,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import site.nebulas.beans.LogAskRobot;
 import site.nebulas.service.DailySentenceService;
+import site.nebulas.service.LogAskRobotService;
+import site.nebulas.util.DateUtil;
 import site.nebulas.util.RobotUtil;
 
 
@@ -25,6 +30,9 @@ public class PageController {
 	
 	@Resource 
 	private DailySentenceService dailySentenceService; 
+	
+	@Resource 
+	private LogAskRobotService logAskRobotService;
 	
 	/**
 	 * @author CaiHonghui
@@ -90,6 +98,19 @@ public class PageController {
 	@RequestMapping(value="askRobot",produces = "text/html;charset=UTF-8")
 	@ResponseBody
 	public String askRobot(String message){
+		LogAskRobot logAskRobot = new LogAskRobot();
+		//获得当前用户名
+		Subject subject = SecurityUtils.getSubject();
+		String userAccount = (String)subject.getPrincipal();
+		//插入数据
+		if (null == userAccount){
+			logAskRobot.setUserAccount("游客");
+		}else{
+			logAskRobot.setUserAccount(userAccount);
+		}
+		logAskRobot.setLogAskRobotContent(message);
+		logAskRobot.setLogAskRobotTime(DateUtil.getCurrentSysDate());
+		logAskRobotService.insert(logAskRobot);
 		return RobotUtil.askRobot(message);
 	}
 	

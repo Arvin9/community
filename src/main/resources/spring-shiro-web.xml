@@ -102,6 +102,9 @@
                 /register = anon
                 /serviceRobot = anon
                 /askRobot = anon
+                /getDailySentence = anon
+                /dailySentenceLike = anon
+                /dailySentenceDislike = anon
                 /resources/** = anon
                 /login = authc
                 /logout = logout

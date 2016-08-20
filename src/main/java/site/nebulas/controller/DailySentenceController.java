@@ -49,9 +49,13 @@ public class DailySentenceController {
 		Subject subject = SecurityUtils.getSubject();
 		String userAccount = (String)subject.getPrincipal();
 		//插入数据
+		if (null == userAccount){
+			dailySentence.setUserAccount("游客");
+		}else{
+			dailySentence.setUserAccount(userAccount);
+		}
 		dailySentence.setDailySentenceHobbyAddTime(DateUtil.getCurrentSysDate());
 		dailySentence.setDailySentenceHobby(1);//喜欢设置为1
-		dailySentence.setUserAccount(userAccount);
 		dailySentenceService.insertDailySentenceHobby(dailySentence);
 		//更新dailySentenceShowTimes
 		dailySentenceService.updateDailySentenceLike(dailySentence);
@@ -74,9 +78,13 @@ public class DailySentenceController {
 		Subject subject = SecurityUtils.getSubject();
 		String userAccount = (String)subject.getPrincipal();
 		//插入数据
+		if (null == userAccount){
+			dailySentence.setUserAccount("游客");
+		}else{
+			dailySentence.setUserAccount(userAccount);
+		}
 		dailySentence.setDailySentenceHobbyAddTime(DateUtil.getCurrentSysDate());
 		dailySentence.setDailySentenceHobby(2);//不喜欢设置为2
-		dailySentence.setUserAccount(userAccount);
 		dailySentenceService.insertDailySentenceHobby(dailySentence);
 		//更新dailySentenceShowTimes
 		dailySentenceService.updateDailySentenceDisLike(dailySentence);

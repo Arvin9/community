@@ -52,7 +52,7 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active">
+					<li class="">
 						<a href="${ctx}/index">首页</a>
 					</li>
 					<li>
