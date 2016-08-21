@@ -5,8 +5,29 @@
 		<%-- 页面修改内容块start  --%>
 		
 		<div class="row">
-			<div class="col-sm-3"></div>
-		  	<div class="col-sm-6">
+			<div class="col-md-3 col-sm-12">
+		  		<%-- 排行榜  --%>
+		  		<div class="panel panel-danger">
+					<div class="panel-heading">
+				    	<h3 class="panel-title">实力排行榜</h3>
+				  	</div>
+				  	<table class="table table-hover">
+				  		<thead>
+					  		<tr>
+					  			<th>#</th>
+					  			<th>用户</th>
+					  			<th>题数</th>
+					  		</tr>
+					  	</thead>
+					  	<tbody id = "rankContent">
+					  		
+					  	</tbody>
+				 	</table>
+				</div>
+		  		<%-- /排行榜 --%>
+		  	</div>
+		  	
+		  	<div class="col-md-6 col-sm-12">
 		  		<%-- pannel --%>
 				<div class="panel panel-info">
 					<div class="panel-heading" id="exercisesTitle"></div>
@@ -54,32 +75,33 @@
 				</div>
 				<%-- /pannel --%>
 		  	</div>
-		  	<div class="col-sm-3">
-		  		<%-- showDailySentence  --%>
-		  		<div class="thumbnail">
-			    	<img id ="dailySentenceUrl" style="filter:chroma(color=#ffffff)" src="" alt="...">
-			    	<div class="caption">
-			    		<h3 id="dailySentenceId" style="text-align:center"><span style="color:#9932CC">每日一句</span></h3>
-			        	<p id="dailySentence"></p>
-			        	<p class="pager">
-			        		<a onclick="dailySentenceLike()" class="btn btn-danger" role="button">
-			        			<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-	  							<span class="badge" id="sentenceLike"></span>
-			        		</a> 
-			        		<a onclick="dailySentenceDislike()" class="btn btn-warning" role="button">
-			        			<span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
-			        			<span class="badge" id="sentenceDisLike"></span>
-			        		</a>
-			        	</p>
-			      	</div>
-			    </div>
-		  		<%-- /showDailySentence --%>
+		  	<div class="col-md-3 col-sm-12">
+		  		<%-- 积分排行榜  --%>
+		  		<div class="panel panel-danger">
+					<div class="panel-heading">
+				    	<h3 class="panel-title">积分排行榜</h3>
+				  	</div>
+				  	<table class="table table-hover">
+				  		<thead>
+					  		<tr>
+					  			<th>#</th>
+					  			<th>用户</th>
+					  			<th>积分</th>
+					  		</tr>
+					  	</thead>
+					  	<tbody id = "integralContent">
+					  		
+					  	</tbody>
+				 	</table>
+				</div>
+		  		<%-- /积分排行榜 --%>
 		  	</div>
 		</div>
 <script>
 	$(function(){
 		getExercises();
 		showDailySentence();
+		exercisesRank();
 	});
 	
 	function getExercises(){
@@ -154,6 +176,31 @@
 	function dailySentenceDislike(){
 		$.post("dailySentenceDislike", { dailySentenceId: $("#dailySentenceId" ).val()},function(data) {
 			showDailySentence();
+		});
+	}
+	
+	function exercisesRank(){
+		//答题排行榜
+		$.get( "getExercisesRank", function(data) {
+			for (var i = 0,len = data.length ; i < len ; i++){
+				var coutent = '<tr>'+
+								'<td>'+ (i+1) +'</td>' +
+								'<td>'+ data[i].userAccount +'</td>' +
+								'<td>'+ data[i].amount +'</td>' +
+								'</tr>';
+				$('#rankContent').append(coutent);
+			}			
+		});
+		//积分排行榜
+		$.get( "getIntegralRank", function(data) {
+			for (var i = 0,len = data.length ; i < len ; i++){
+				var coutent = '<tr>'+
+								'<td>'+ (i+1) +'</td>' +
+								'<td>'+ data[i].userAccount +'</td>' +
+								'<td>'+ data[i].integral +'</td>' +
+								'</tr>';
+				$('#integralContent').append(coutent);
+			}			
 		});
 	}
 </script>

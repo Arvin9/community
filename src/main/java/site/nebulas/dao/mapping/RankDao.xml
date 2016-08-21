@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.nebulas.dao.RankDao">
+
+	<select id="getExercisesRank" resultType="java.util.Map">
+		select 
+			user_account userAccount, 
+			count(exercises_id) amount
+		from exercises_answer 
+		GROUP BY user_account
+		ORDER BY amount DESC
+		limit 10
+	</select>
+	<select id="getIntegralRank" resultType="java.util.Map">
+		select ea.user_account userAccount,SUM(e.exercises_integral) integral
+		from exercises_answer ea
+		left join exercises e
+		on ea.exercises_id = e.exercises_id
+		GROUP BY ea.user_account
+		ORDER BY integral DESC
+		limit 10
+	</select>
+
+</mapper>

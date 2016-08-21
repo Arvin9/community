@@ -20,7 +20,7 @@ import site.nebulas.util.DateUtil;
 
 @Controller
 public class DailySentenceController {
-	private Logger logger = LoggerFactory.getLogger(DailySentenceController.class);
+	private Logger log = LoggerFactory.getLogger(DailySentenceController.class);
 	
 	@Resource 
 	private DailySentenceService dailySentenceService; 

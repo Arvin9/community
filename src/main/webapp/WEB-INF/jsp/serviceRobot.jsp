@@ -5,7 +5,7 @@
 		
 		<div class="row">
 			<!-- Area Charts:Morris --><!-- Chat -->
-			<div class="col-sm-offset-3 col-sm-6" > 
+			<div class="col-md-offset-3 col-md-6 col-sm-12" > 
 				<div class="widget-container scrollable chat" style="height: 520px;">
 					<div class="heading">
 						<i class="icon-comments"></i>客服机器人<i class="icon-smile pull-right"></i>
@@ -45,7 +45,7 @@
 			</div>
 			<!-- End Chat -->
 			
-			<div class="col-sm-3">
+			<div class="col-md-3 col-sm-12">
 				
 		  		<%-- showDailySentence  --%>
 		  		<div class="thumbnail">
