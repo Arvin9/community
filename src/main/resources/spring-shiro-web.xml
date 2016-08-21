@@ -105,6 +105,10 @@
                 /getDailySentence = anon
                 /dailySentenceLike = anon
                 /dailySentenceDislike = anon
+                /messageBoard = anon
+                /submitMessage = anon
+                /getMessageBoard = anon
+                /submitMessageSupport = anon
                 /resources/** = anon
                 /login = authc
                 /logout = logout

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.nebulas.dao.MessageBoardDao">
+
+	<select id="getMessageBoard" resultType="MessageBoard">
+		select
+			message_board_id messageBoardId, 
+			user_account userAccount,
+			message_board_content messageBoardContent,
+			message_board_add_time messageBoardAddTime,
+			message_board_support messageBoardSupport
+		from message_board 
+		ORDER BY message_board_add_time DESC
+		limit 10
+	</select>
+	
+
+	<insert id="insertMessageBoard">
+		insert into message_board (
+			user_account,
+			message_board_content,
+			message_board_add_time,
+			message_board_support,
+			message_board_login_ip
+		)values (
+			#{userAccount},
+			#{messageBoardContent},
+			#{messageBoardAddTime},
+			#{messageBoardSupport},
+			#{messageBoardLoginIp}
+		)
+	</insert>
+	
+	<update id="updateMessageBoard">
+		update message_board
+		set message_board_support = message_board_support + 1
+		where message_board_id = #{messageBoardId}
+	</update>
+	
+	<insert id="insertMessageBoardSupport">
+		insert into message_board_support (
+			message_board_support_id,
+			message_board_id,
+			user_account,
+			message_board_support_time,
+			message_board_support_login_ip
+		)values (
+			#{messageBoardSupportId},
+			#{messageBoardId},
+			#{userAccount},
+			#{messageBoardSupportTime},
+			#{messageBoardSupportLoginIp}
+		)
+	</insert>
+
+</mapper>

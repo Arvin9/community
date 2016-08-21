@@ -27,7 +27,9 @@
 		
 	<script src="${ctx}/resources/jquery/1.11.1/jquery.min.js"></script>
 	<script src="${ctx}/resources/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="${ctx}/resources/js/jquery.easyui.min.js"></script>
 	<script src="${ctx}/resources/bootstrap-jquery/jquery.bootstrap.min.js"></script>
+	
 	
 </head>
 <body>
@@ -62,7 +64,7 @@
 						<a href="${ctx}/serviceRobot">客服机器人</a>
 					</li>
 					<li>
-						<a href="${ctx}/contact">Contact</a>
+						<a href="${ctx}/messageBoard">留言板</a>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right" >

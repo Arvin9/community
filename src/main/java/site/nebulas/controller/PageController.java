@@ -114,5 +114,16 @@ public class PageController {
 		return RobotUtil.askRobot(message);
 	}
 	
+	/**
+	 * @author CaiHonghui
+	 * @date 20160821
+	 *  留言板
+	 */
+	@RequestMapping("messageBoard")
+	public ModelAndView messageBoard(){
+		ModelAndView modelAndView = new ModelAndView("messageBoard");
+		return modelAndView;
+	}
+	
 	
 }
