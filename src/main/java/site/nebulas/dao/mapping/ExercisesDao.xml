@@ -23,6 +23,7 @@
 		WHERE exercises_id not in(SELECT exercises_id
 			FROM exercises_answer
 			WHERE user_account = #{userAccount})
+		ORDER BY exercises_difficulty_level ASC
 		limit 1
 	</select>
 	
@@ -37,4 +38,16 @@
 			#{exercisesAnswerTime}
 		)
 	</insert>
+	
+	<update id="updateAnswerCorrectValue">
+		update exercises
+		set answer_correct_count = answer_correct_count + 1,
+			answer_count = answer_count + 1 
+		where exercises_id = #{exercisesId}
+	</update>
+	<update id="updateAnswerValue">
+		update exercises
+		set answer_count = answer_count + 1
+		where exercises_id = #{exercisesId}
+	</update>
 </mapper>

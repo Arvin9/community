@@ -100,7 +100,6 @@
 <script>
 	$(function(){
 		getExercises();
-		showDailySentence();
 		exercisesRank();
 	});
 	
@@ -145,6 +144,7 @@
 					if(200 == data.ret){
 						$.messager.alert("消息", "回答正确,进入下一题.");
 						getExercises();
+						exercisesRank();
 					}
 					if(400 == data.ret){
 						$('#exercisesError').text(data.msg);
@@ -156,32 +156,11 @@
 		}
 	}
 	
-	function showDailySentence(){
-		$.get('getDailySentence', function(data) {
-			$('#dailySentenceId').val(data.dailySentenceId);
-			$('#dailySentence').text(data.dailySentence);
-			$('#dailySentenceUrl').attr('src',data.dailySentenceUrl);
-			$('#sentenceLike').text(data.dailySentenceLike);
-			$('#sentenceDisLike').text(data.dailySentenceDisLike);
-			
-		});
-	}
-
-	function dailySentenceLike(){
-		$.post("dailySentenceLike", { dailySentenceId: $("#dailySentenceId" ).val()},function(data) {
-			showDailySentence();
-		});
-	}
-	
-	function dailySentenceDislike(){
-		$.post("dailySentenceDislike", { dailySentenceId: $("#dailySentenceId" ).val()},function(data) {
-			showDailySentence();
-		});
-	}
 	
 	function exercisesRank(){
 		//答题排行榜
 		$.get( "getExercisesRank", function(data) {
+			$('#rankContent').children().remove();
 			for (var i = 0,len = data.length ; i < len ; i++){
 				var coutent = '<tr>'+
 								'<td>'+ (i+1) +'</td>' +
@@ -193,6 +172,7 @@
 		});
 		//积分排行榜
 		$.get( "getIntegralRank", function(data) {
+			$('#integralContent').children().remove();
 			for (var i = 0,len = data.length ; i < len ; i++){
 				var coutent = '<tr>'+
 								'<td>'+ (i+1) +'</td>' +

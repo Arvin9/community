@@ -36,4 +36,25 @@ public class ExercisesService {
 	public void insertAnswerRecord(Exercises exercises){
 		exercisesDao.insertAnswerRecord(exercises);
 	}
+	
+	/**
+	 * @author CaiHonghui
+	 * @date 20160823
+	 * @version 0.1
+	 * @param exercisesId
+	 * 更新答题正确数和答题数
+	 * */
+	public void updateAnswerCorrectValue(Exercises exercises){
+		exercisesDao.updateAnswerCorrectValue(exercises);
+	}
+	/**
+	 * @author CaiHonghui
+	 * @date 20160823
+	 * @version 0.1
+	 * @param exercisesId
+	 * 更新答题数
+	 * */
+	public void updateAnswerValue(Exercises exercises){
+		exercisesDao.updateAnswerValue(exercises);
+	}
 }

@@ -62,7 +62,7 @@ public class ExercisesController {
 	 * @author CaiHonghui
 	 * @since 0.1
 	 * 20160813 验证用户提交答案是否正确
-	 * 
+	 * @param exercisesById
 	 * 状态码：
 	 * 	   200   答案正确
 	 * 	   400  答案为空，或不正确
@@ -88,13 +88,17 @@ public class ExercisesController {
 		String correctAnswer = correct.getExercisesAnswer();
 		//验证答案正确性
 		if(exercisesAnswer.equals(correctAnswer)){
-			//将答题记录写入数据库
 			exercises.setUserAccount(userAccount);
 			exercises.setExercisesAnswerTime(DateUtil.getCurrentSysDate());
+			//将答题正确记录写入数据库
 			exercisesService.insertAnswerRecord(exercises);
+			//更新答题正确数和答题数
+			exercisesService.updateAnswerCorrectValue(exercises);
 			rs.setRet(200);
 			rs.setMsg("success");
 		}else{
+			//更新答题数
+			exercisesService.updateAnswerValue(exercises);
 			rs.setRet(400);
 			rs.setMsg("答案错误，请看提示！");
 		}
