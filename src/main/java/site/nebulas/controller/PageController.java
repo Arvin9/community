@@ -3,6 +3,7 @@ package site.nebulas.controller;
 import javax.annotation.Resource;
 
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import site.nebulas.beans.Dynamic;
 import site.nebulas.beans.LogAskRobot;
 import site.nebulas.service.DailySentenceService;
+import site.nebulas.service.DynamicService;
 import site.nebulas.service.LogAskRobotService;
 import site.nebulas.util.DateUtil;
 import site.nebulas.util.RobotUtil;
@@ -30,9 +33,10 @@ public class PageController {
 	
 	@Resource 
 	private DailySentenceService dailySentenceService; 
-	
 	@Resource 
 	private LogAskRobotService logAskRobotService;
+	@Resource
+	DynamicService dynamicService;
 	
 	/**
 	 * @author CaiHonghui
@@ -85,6 +89,22 @@ public class PageController {
 	 */
 	@RequestMapping("serviceRobot")
 	public String serviceRobot(){
+		Dynamic dynamic = new Dynamic();
+		//获得当前用户名
+		Subject subject = SecurityUtils.getSubject();
+		Session session = subject.getSession();
+		String userAccount = (String)subject.getPrincipal();
+		if (null == userAccount){
+			dynamic.setUserAccount("游客");
+		}else{
+			dynamic.setUserAccount(userAccount);//留言点赞用户名
+		}
+		//插入进入客服机器人页面动态
+		dynamic.setDynamicLoginIp(session.getHost());//用户登录ip
+		dynamic.setDynamicContent("正在询问客服机器人");
+		dynamic.setDynamicAddTime(DateUtil.getCurrentSysDate());//动态发生时间
+		dynamic.setDynamicTyle(5);//5为进入客服机器人页面动态
+		dynamicService.insertDynamic(dynamic);
 		return "serviceRobot";
 	}
 	
@@ -122,6 +142,23 @@ public class PageController {
 	@RequestMapping("messageBoard")
 	public ModelAndView messageBoard(){
 		ModelAndView modelAndView = new ModelAndView("messageBoard");
+		Dynamic dynamic = new Dynamic();
+		//获得当前用户名
+		Subject subject = SecurityUtils.getSubject();
+		Session session = subject.getSession();
+		String userAccount = (String)subject.getPrincipal();
+		if (null == userAccount){
+			dynamic.setUserAccount("游客");
+		}else{
+			dynamic.setUserAccount(userAccount);//留言点赞用户名
+		}
+		//插入进入留言板动态
+		dynamic.setDynamicLoginIp(session.getHost());//用户登录ip
+		dynamic.setDynamicContent("正在查看留言");
+		dynamic.setDynamicAddTime(DateUtil.getCurrentSysDate());//动态发生时间
+		dynamic.setDynamicTyle(3);//3为进入留言板动态
+		dynamicService.insertDynamic(dynamic);
+		
 		return modelAndView;
 	}
 	

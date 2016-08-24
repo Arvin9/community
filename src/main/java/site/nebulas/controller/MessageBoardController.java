@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import site.nebulas.beans.DailySentence;
+import site.nebulas.beans.Dynamic;
 import site.nebulas.beans.MessageBoard;
 import site.nebulas.beans.Response;
 import site.nebulas.service.DailySentenceService;
+import site.nebulas.service.DynamicService;
 import site.nebulas.service.MessageBoardService;
 import site.nebulas.util.DateUtil;
 
@@ -28,7 +30,9 @@ public class MessageBoardController {
 	private Logger log = LoggerFactory.getLogger(MessageBoardController.class);
 	
 	@Resource 
-	private MessageBoardService messageBoardService; 
+	private MessageBoardService messageBoardService;
+	@Resource
+	DynamicService dynamicService;
 	
 	/**
 	 * @author CaiHonghui
@@ -63,6 +67,15 @@ public class MessageBoardController {
 		messageBoard.setMessageBoardSupport(0);
 		messageBoard.setMessageBoardAddTime(DateUtil.getCurrentSysDate());//留言时间
 		messageBoardService.insertMessageBoard(messageBoard);
+		
+		//插入留言动态
+		Dynamic dynamic = new Dynamic();
+		dynamic.setUserAccount(messageBoard.getUserAccount());//用户名
+		dynamic.setDynamicLoginIp(session.getHost());//用户登录ip
+		dynamic.setDynamicContent("在留言板留言啦，快来看看写了些什么!");
+		dynamic.setDynamicAddTime(DateUtil.getCurrentSysDate());//动态发生时间
+		dynamic.setDynamicTyle(3);//3为留言动态
+		dynamicService.insertDynamic(dynamic);
 	}
 	
 	/**
@@ -87,9 +100,14 @@ public class MessageBoardController {
 		messageBoard.setMessageBoardSupportTime(DateUtil.getCurrentSysDate());//留言点赞时间
 		messageBoardService.insertMessageBoardSupport(messageBoard); //插入留言板用户点赞信息
 		messageBoardService.updateMessageBoard(messageBoard); //更新留言板的点赞数量
+		
+		//插入点赞留言动态
+		Dynamic dynamic = new Dynamic();
+		dynamic.setUserAccount(messageBoard.getUserAccount());//用户名
+		dynamic.setDynamicLoginIp(session.getHost());//用户登录ip
+		dynamic.setDynamicContent("在点赞了留言,来围观下哪条最赞!");
+		dynamic.setDynamicAddTime(DateUtil.getCurrentSysDate());//动态发生时间
+		dynamic.setDynamicTyle(4);//4为点赞动态
+		dynamicService.insertDynamic(dynamic);
 	}
-	
-	
-
-	
 }

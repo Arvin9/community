@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.nebulas.dao.DynamicDao">
+
+
+	<select id="getDynamicOrderByTime" resultType="Dynamic">
+		select 
+			dynamic_id dynamicId,
+			user_account userAccount,
+			dynamic_login_ip dynamicLoginIp,
+			dynamic_content dynamicContent,
+			dynamic_add_time dynamicAddTime,
+			dynamic_tyle dynamicTyle
+		from dynamic
+		ORDER BY dynamicAddTime DESC
+		LIMIT 10
+	</select>
+	
+	
+	<insert id="insertDynamic">
+		insert into dynamic (
+			user_account,
+			dynamic_login_ip,
+			dynamic_content,
+			dynamic_add_time,
+			dynamic_tyle
+		) values (
+			#{userAccount},
+			#{dynamicLoginIp},
+			#{dynamicContent},
+			#{dynamicAddTime},
+			#{dynamicTyle})
+	</insert>
+	
+	
+</mapper>

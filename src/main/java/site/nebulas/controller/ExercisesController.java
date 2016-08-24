@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,8 +13,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.fastjson.JSON;
+
+import site.nebulas.beans.Dynamic;
 import site.nebulas.beans.Exercises;
 import site.nebulas.beans.Response;
+import site.nebulas.service.DynamicService;
 import site.nebulas.service.ExercisesService;
 import site.nebulas.util.DateUtil;
 
@@ -24,7 +28,9 @@ public class ExercisesController {
 	private Logger logger = LoggerFactory.getLogger(ExercisesController.class);
 	
 	@Resource 
-	private ExercisesService exercisesService; 
+	private ExercisesService exercisesService;
+	@Resource
+	DynamicService dynamicService;
 	
 	/**
 	 * @author CaiHonghui
@@ -41,6 +47,7 @@ public class ExercisesController {
 		
 		//获得当前用户名
 		Subject subject = SecurityUtils.getSubject();
+		Session session = subject.getSession(); 
 		String userAccount = (String)subject.getPrincipal();
 		
 		Map<String,String> map = exercisesService.getExercisesByUserAccount(userAccount);
@@ -50,6 +57,14 @@ public class ExercisesController {
 			rs.setMsg("没有题目了!");
 			return rs;
 		}
+		//插入答题动态
+		Dynamic dynamic = new Dynamic();
+		dynamic.setUserAccount(userAccount);//用户名
+		dynamic.setDynamicLoginIp(session.getHost());//用户登录ip
+		dynamic.setDynamicContent("进入答题页面");
+		dynamic.setDynamicAddTime(DateUtil.getCurrentSysDate());//动态发生时间
+		dynamic.setDynamicTyle(2);//2为答题动态
+		dynamicService.insertDynamic(dynamic);
 		
 		rs.setRet(200);
 		rs.setMsg("success");
@@ -73,6 +88,7 @@ public class ExercisesController {
 		Response rs = new Response(); 
 		//获得当前用户名
 		Subject subject = SecurityUtils.getSubject();
+		Session session = subject.getSession(); 
 		String userAccount = (String)subject.getPrincipal();
 		
 		//获取用户答案
@@ -94,6 +110,15 @@ public class ExercisesController {
 			exercisesService.insertAnswerRecord(exercises);
 			//更新答题正确数和答题数
 			exercisesService.updateAnswerCorrectValue(exercises);
+			//插入答题动态
+			Dynamic dynamic = new Dynamic();
+			dynamic.setUserAccount(userAccount);//用户名
+			dynamic.setDynamicLoginIp(session.getHost());//用户登录ip
+			dynamic.setDynamicContent("答对一题");
+			dynamic.setDynamicAddTime(DateUtil.getCurrentSysDate());//动态发生时间
+			dynamic.setDynamicTyle(2);//2为答题动态
+			dynamicService.insertDynamic(dynamic);
+			
 			rs.setRet(200);
 			rs.setMsg("success");
 		}else{

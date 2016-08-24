@@ -18,9 +18,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import site.nebulas.beans.Dynamic;
 import site.nebulas.beans.LogLogin;
 import site.nebulas.beans.Response;
 import site.nebulas.beans.User;
+import site.nebulas.service.DynamicService;
 import site.nebulas.service.LogLoginService;
 import site.nebulas.service.UserService;
 import site.nebulas.util.DateUtil;
@@ -41,6 +43,8 @@ public class ShiroController {
 	UserService userService;
 	@Resource
 	LogLoginService logLoginService;
+	@Resource
+	DynamicService dynamicService;
 	
 	@RequestMapping("loginIn")
 	public String loginIn(Model model,User user){
@@ -57,11 +61,21 @@ public class ShiroController {
 			
 			try {
 				 subject.login(token);
+				 //插入登陆日志
 				 logLogin.setUserAccount(userAccount);
 				 logLogin.setLoginIp(session.getHost());//用户登录ip
 				 logLogin.setLoginState(1); //登陆成功
 				 logLogin.setLoginTime(DateUtil.getCurrentSysDate());
 				 logLoginService.insert(logLogin);
+				 //插入登陆动态
+				 Dynamic dynamic = new Dynamic();
+				 dynamic.setUserAccount(userAccount);//用户名
+				 dynamic.setDynamicLoginIp(session.getHost());//用户登录ip
+				 dynamic.setDynamicContent("登陆");
+				 dynamic.setDynamicAddTime(DateUtil.getCurrentSysDate());//动态发生时间
+				 dynamic.setDynamicTyle(1);//1为登陆动态
+				 dynamicService.insertDynamic(dynamic);
+				 
 //				 System.out.println("用户是否是通过验证登陆："+subject.isAuthenticated());
 //				 System.out.println("用户是否是通过记住我登陆："+subject.isRemembered());
 			}catch(UnknownAccountException uae){
