@@ -30,10 +30,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<h2 class="form-signin-heading">Please sign in</h2>
 			<label for="inputEmail" class="sr-only"> Email address </label> 
 			<input	type="text" id="userAccount" name="userAccount"
-				class="form-control" required autofocus> 
+				class="form-control" required autofocus placeholder="用户名"> 
 			<label for="inputPassword" class="sr-only"> Password </label> 
 			<input type="password" id="bePassword" name="bePassword" class="form-control"
-				 required>
+				 required placeholder="密码">
 			<input type="password" id="password" name="password" hidden="hidden" >
 			<div class="checkbox">
 				<label> 
@@ -42,6 +42,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</label>
 			</div>
 			<a class="btn btn-lg btn-primary btn-block" onclick="login()">Sign in</a>
+			<div>
+			  <ul class="pager">
+			    <li class="previous"><a href="index">游客</a></li>
+			    <li class="next"><a href="signUp">注册</a></li>
+			  </ul>
+			</div>
 		</form>
 	</div>
 	<!-- /container -->

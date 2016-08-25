@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  	</div>
 			  	<div class="form-group">
 			    	<div class="col-sm-12">
-			      		<input type="password" class="form-control" id="repetPassword" name="repetPassword" placeholder="Repet Password">
+			      		<input type="password" class="form-control" id="repetPassword" name="repetPassword" placeholder="Repeat Password">
 			    	</div>
 			  	</div>
 			  	
