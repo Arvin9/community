@@ -3,8 +3,8 @@
 	<!-- 动态包含 -->
 	<jsp:include page="include/top.jsp"></jsp:include>
 		<div class="row">
-			<div class="col-sm-12 col-md-12">
-					
+			<div class="col-md-offset-2 col-md-8 col-sm-12">
+				<img class="img-responsive" alt="留言板文本分析" title="留言板文本分析" src="${messageBoardAnalysis}"></img>	
 			</div>
 				
 			<div class="col-md-offset-2 col-md-8 col-sm-12">

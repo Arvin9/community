@@ -1,5 +1,7 @@
 package site.nebulas.controller;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.apache.shiro.SecurityUtils;
@@ -14,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import site.nebulas.beans.Dynamic;
 import site.nebulas.beans.LogAskRobot;
+import site.nebulas.service.ConfigurationService;
 import site.nebulas.service.DailySentenceService;
 import site.nebulas.service.DynamicService;
 import site.nebulas.service.LogAskRobotService;
@@ -37,6 +40,8 @@ public class PageController {
 	private LogAskRobotService logAskRobotService;
 	@Resource
 	DynamicService dynamicService;
+	@Resource
+	ConfigurationService configurationService;
 	
 	/**
 	 * @author CaiHonghui
@@ -142,6 +147,8 @@ public class PageController {
 	@RequestMapping("messageBoard")
 	public ModelAndView messageBoard(){
 		ModelAndView modelAndView = new ModelAndView("messageBoard");
+		Map<String,String> map = configurationService.getConfigurationValueByKey("messageBoardAnalysis");
+		modelAndView.addObject("messageBoardAnalysis", map.get("configurationValue"));
 		Dynamic dynamic = new Dynamic();
 		//获得当前用户名
 		Subject subject = SecurityUtils.getSubject();
