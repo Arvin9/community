@@ -118,7 +118,7 @@ public class PageController {
 	 * @date 20160820
 	 * @param message
 	 * @return {"code":100000,"text":"您好，我是客服机器人，有什么可以帮您的吗？"}
-	 *  客服机器人页面
+	 *  客服机器人
 	 */
 	@RequestMapping(value="askRobot",produces = "text/html;charset=UTF-8")
 	@ResponseBody
@@ -142,7 +142,7 @@ public class PageController {
 	/**
 	 * @author CaiHonghui
 	 * @date 20160821
-	 *  留言板
+	 *  留言板页面
 	 */
 	@RequestMapping("messageBoard")
 	public ModelAndView messageBoard(){
@@ -166,6 +166,17 @@ public class PageController {
 		dynamic.setDynamicTyle(3);//3为进入留言板动态
 		dynamicService.insertDynamic(dynamic);
 		
+		return modelAndView;
+	}
+	
+	/**
+	 * @author CaiHonghui
+	 * @date 20160828
+	 *  修改密码页面
+	 */
+	@RequestMapping("changePassword")
+	public ModelAndView changePassword(){
+		ModelAndView modelAndView = new ModelAndView("changePassword");
 		return modelAndView;
 	}
 	

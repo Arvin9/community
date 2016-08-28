@@ -84,9 +84,20 @@
 							<li>
 								<a href='/index'>欢迎<span id="topUserAccount" style="color:red"><shiro:principal/></span>登录</a>
 							</li>
-							<li>	
-								<a href="logout">退出</a> 
-							</li>	
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									<span class="glyphicon glyphicon-user">
+									</span><span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>	
+										<a href="changePassword">修改密码</a> 
+									</li>	
+							    	<li>	
+										<a href="logout">退出</a> 
+									</li>	
+							    </ul>
+							</li>
 						</shiro:user>
 						
 				</ul>

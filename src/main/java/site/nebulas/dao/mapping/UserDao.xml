@@ -8,6 +8,7 @@
 			user_id userId, 
 			role_id roleId,
 			user_account userAccount,
+			user_mailbox userMailbox,
 			password password,
 			salt salt, 
 			real_name realName, 
@@ -18,77 +19,45 @@
 		from user 
 		where user_account = #{userAccount}
 	</select>
-	<select id="findRoles" resultType="java.util.Map">
-		select 
-
-			role_id roleId
-
-		from manager 
-		where manager_account = #{managerAccount}
-	</select>
-	<select id="findPermissions" resultType="java.util.Map">
-		select 
-
-			role_id roleId
-
-		from manager 
-		where manager_account = #{managerAccount}
-	</select>
-	
 	
 	<insert id="createUser">
-		insert into user(role_id,user_account,password,salt,real_name,add_time,is_lock,add_man,is_delete) 
-		values(#{roleId},#{userAccount},#{password}, #{salt},#{realName},#{addTime},#{isLock},#{addMan},#{isDelete})
+		insert into user(role_id,user_account,user_mailbox,password,salt,real_name,add_time,is_lock,add_man,is_delete) 
+		values(#{roleId},#{userAccount},#{userMailbox},#{password}, #{salt},#{realName},#{addTime},#{isLock},#{addMan},#{isDelete})
 	</insert>
 	
-	<update id="update">
-		update book
+	<update id="updateUser">
+		update user
 		<set>
-			<if test="bookName !=null and bookName !='' ">
-				book_name = #{bookName},
+			<if test="roleId !=null">
+				role_id = #{roleId},
 			</if>
-			<if test="bookAuthor !=null and bookAuthor !='' ">
-				book_author = #{bookAuthor},
+			<if test="userAccount !=null and userAccount !='' ">
+				user_account = #{userAccount},
 			</if>
-			<if test="bookDesc !=null and bookDesc !='' ">
-				book_desc = #{bookDesc},
+			<if test="userMailbox !=null and userMailbox !='' ">
+				user_mailbox = #{userMailbox},
 			</if>
-			<if test="publishingCompany !=null and publishingCompany !='' ">
-				publishing_company = #{publishingCompany},
+			<if test="password !=null and password !='' ">
+				password = #{password},
 			</if>
-			<if test="price !=null and price !='' ">
-				price = #{price},
+			<if test="salt !=null and salt !='' ">
+				salt = #{salt},
 			</if>
-			<if test="publishingYear !=null and publishingYear !='' ">
-				publishing_year = #{publishingYear},
+			<if test="addTime !=null and addTime !='' ">
+				real_name = #{addTime},
 			</if>
-			<if test="bookPic !=null and bookPic !='' ">
-				book_pic = #{bookPic},
+			<if test="isLock !=null">
+				is_lock = #{isLock},
 			</if>
-			<if test="bookURL !=null and bookURL !='' ">
-				book_url = #{bookURL},
+			<if test="addMan !=null and addMan !='' ">
+				add_man = #{addMan},
 			</if>
-			<if test="categoryID !=null and categoryID !='' ">
-				category_id = #{categoryID},
-			</if>
-			<if test="isHot != null ">
-				is_hot = #{isHot},
-			</if>
-			<if test="isRecommend != null ">
-				is_recommend = #{isRecommend},
-			</if>
-			<if test="isTop != null ">
-				is_top = #{isTop},
-			</if>
-			<if test="updateTime !=null and updateTime !='' ">
-				update_time = #{updateTime}
+			<if test="isDelete !=null">
+				is_delete = #{isDelete},
 			</if>
 		</set>
-		where book_id = #{bookID}
+		where user_account = #{userAccount}
 	</update>
 	
-	<delete id="delete">
-		delete from book
-		where book_id = #{bookID}
-	</delete>
+
 </mapper>

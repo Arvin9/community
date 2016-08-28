@@ -59,6 +59,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$.messager.alert("警告", "密码错误");
 	}else if ("ss" == message) {
 		$.messager.alert("信息", "注册成功，请登录");
+	}else if ("changePasswordSuccess" == message){
+		$.messager.alert("信息", "修改密码成功，请重新登录");
 	}
 	function login() {
 		var password = hex_md5($('#bePassword').val());

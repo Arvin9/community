@@ -11,6 +11,7 @@ public class User implements Serializable {
     private String userId;
     private String roleId;
     private String userAccount;
+    private String userMailbox;
     private String password;
     private String salt;
     private String realName;
@@ -101,6 +102,14 @@ public class User implements Serializable {
 
 	public void setIsDelete(Integer isDelete) {
 		this.isDelete = isDelete;
+	}
+
+	public String getUserMailbox() {
+		return userMailbox;
+	}
+
+	public void setUserMailbox(String userMailbox) {
+		this.userMailbox = userMailbox;
 	}
     
     

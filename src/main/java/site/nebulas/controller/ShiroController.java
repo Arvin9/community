@@ -24,6 +24,7 @@ import site.nebulas.beans.Response;
 import site.nebulas.beans.User;
 import site.nebulas.service.DynamicService;
 import site.nebulas.service.LogLoginService;
+import site.nebulas.service.PasswordHelper;
 import site.nebulas.service.UserService;
 import site.nebulas.util.DateUtil;
 
@@ -45,6 +46,7 @@ public class ShiroController {
 	LogLoginService logLoginService;
 	@Resource
 	DynamicService dynamicService;
+	
 	
 	@RequestMapping("loginIn")
 	public String loginIn(Model model,User user){
@@ -133,24 +135,67 @@ public class ShiroController {
 	}
 	
 	/**
-	 * @author 
+	 * @author Honghui
 	 * @date  20160818
 	 * @since 0.1
 	 *  用户注册,创建用户
 	 **/
 	@RequestMapping("register")
 	public Object register(Model model,String userAccount,String email,String password){
-		System.out.println(userAccount);
-		System.out.println(email);
-		System.out.println(password);
 		User user = new User();
 		user.setUserAccount(userAccount);
 		user.setPassword(password);
+		user.setUserMailbox(email);
+		user.setAddTime(DateUtil.getCurrentSysDate());
 		userService.createUser(user);
 		model.addAttribute("message", "ss");
 		return "login";
 	}
 	
+	/**
+	 * @author Honghui
+	 * @date  20160828
+	 * @since 0.1
+	 *	修改密码时判断用户预留邮箱是否正确
+	 **/
+	@RequestMapping("isUserEmail")
+	@ResponseBody
+	public Object isUserEmail(String email){
+		Response rs = new Response(); 
+		//获得当前用户名
+		Subject subject = SecurityUtils.getSubject();
+		String userAccount = (String)subject.getPrincipal();
+		User user = new User();
+		user = userService.findByUserAccount(userAccount);
+		if(user.getUserMailbox().equals(email)){
+			//与预留邮箱相同，返回true
+			rs.setRet(200);
+			rs.setMsg("true");
+		}else{
+			//与预留邮箱不同，返回false
+			rs.setRet(200);
+			rs.setMsg("false");
+		}
+		return rs;
+	}
+	
+	/**
+	 * @author Honghui
+	 * @date  20160828
+	 * @since 0.1
+	 *	修改密码
+	 **/
+	@RequestMapping("alterPassword")
+	public Object alterPassword(Model model,String newPassword){
+		//获得当前用户名
+		Subject subject = SecurityUtils.getSubject();
+		String userAccount = (String)subject.getPrincipal();
+        //修改密码
+        userService.changePassword(userAccount,newPassword);
+        model.addAttribute("message", "changePasswordSuccess");
+        subject.logout();
+    	return "login";
+	}
 }
 
 

@@ -12,17 +12,9 @@ public interface UserDao {
     public void createUser(User user);
     
     public void updateUser(User user);
-    public void deleteUser(Long userId);
 
-    public void correlationRoles(Long userId, Long... roleIds);
-    public void uncorrelationRoles(Long userId, Long... roleIds);
+    User findByUserAccount(String userAccount);
 
-    User findOne(Long userId);
 
-    User findByUserAccount(String username);
-
-    Set<String> findRoles(String username);
-
-    Set<String> findPermissions(String username);
 }
 
