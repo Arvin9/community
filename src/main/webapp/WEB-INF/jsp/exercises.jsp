@@ -39,11 +39,12 @@
 						 <div class="form-group">
 						 	<label class="col-sm-2 control-label" >内容</label>
 						    <div class="col-sm-8">
-						    	<!--  <div class="form-control" id="exercisesContent">
+						    	<!--  
+						    	<div class="form-control" id="exercisesContent">
 						    	</div>
 						    	-->
-						    	<pre class="pre-scrollable" id="exercisesContent">
-						    	</pre>
+						    	<textarea  class="form-control"  rows="14" style="width:100%" disabled="disabled" id="exercisesContent">
+						    	</textarea >
 						    	
 						    </div>
 						 </div>
@@ -56,13 +57,15 @@
 						 <div class="form-group">
 						 	<label class="col-sm-2 control-label" ></label>
 						    <div class="col-sm-8">
-						    	<div id="exercisesHint" class="alert alert-warning" hidden="hidden"></div>
+						    	<div id="exercisesHint" class="alert alert-warning alert-dismissible" role="alert" hidden="hidden">
+						    	</div>
 						    </div>
 						 </div>
 						 <div class="form-group">
 						 	<label class="col-sm-2 control-label" ></label>
 						    <div class="col-sm-8">
-						    	<div id="exercisesError" class="alert alert-danger alert-dismissible" hidden="hidden"></div>
+						    	<div id="exercisesError" class="alert alert-danger alert-dismissible" hidden="hidden">
+						    	</div>
 						    </div>
 						 </div>
 						<div class="form-group">
@@ -139,8 +142,6 @@
 				},
 				success: function(data){
 					var data = data;
-					console.info(data);
-					console.info(data.msg);
 					if(200 == data.ret){
 						$.messager.alert("消息", "回答正确,进入下一题.");
 						getExercises();

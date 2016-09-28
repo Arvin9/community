@@ -110,6 +110,8 @@
                 /getMessageBoard = anon
                 /submitMessageSupport = anon
                 /resources/** = anon
+                /article* = anon
+                /getArticleDetail = anon
                 /login = authc
                 /logout = logout
                 /** = user

@@ -40,25 +40,10 @@
 				</h1>
 			</div>
 
-			<!-- Main component for a primary marketing message or call to action -->
-			<div class="jumbotron">
-				<h1>
-					Hello World
-				</h1>
-				<p>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-						Wherever you are, and whoever you may be, 
-					there is one thing in which you and I are just alike at this monment, 
-					and in all the moments of our existence. 
-					We are not at rest, we are on a journey. 
-					Our life is a movement, a tendency, a steady, ceaseless progress towards an unseen goal.
-				</p>
-
-
-				<p>
-					<a class="btn btn-lg btn-primary" href="<%=path%>/contact" role="button">Contact me &raquo;</a>
-				</p>
-			</div>
+			<div class="row">
+	        	<div class="col-md-8" id="showArticle">
+	            </div>
+	        </div>
 
 
 			<!-- 静态包含 -->
@@ -66,5 +51,43 @@
 
 		</div>
 		<!-- /container -->
+		
+		<script type="text/javascript">
+		
+		$(function(){
+			$.get( "articleQueryForShow", function(data) {
+				articlePrint(data);
+			});
+		});
+		
+		function articlePrint(data){
+			$.each(data,function(index,obj){
+				var content = '<div class="panel panel-default">' +
+							  	'<div class="panel-body">' +
+							  		'<div class="row">' +
+								  		'<div class="col-md-8">' +
+								  			'<span class="badge">'+ obj.articlePageView +'</span> &nbsp; <a href="javascript:void(0);" style="font-size:22px;" onclick="articleDetail('+ obj.articleId +')">'+obj.articleCaption+'</a> ' +
+								  		'</div>' +
+								  		'<div class="col-md-4">' +
+								  			'<span class="label label-default">'+ obj.articleUpdateTime +'</span>' +
+								  		'</div>' +
+								  	'</div>' +
+								  	'<div class="row">' +
+							  			'<div class="col-md-8">' +
+							  				'<blockquote><p >'+obj.articleDigest+'</p></blockquote>' +
+							  			'</div>' +
+							  		'</div>' +
+							  	'</div>' +
+							  '</div>';
+				console.log(obj.articleId);
+				$('#showArticle').append(content);
+			});
+		}
+		function articleDetail(articleId){
+			var url = "${ctx}/articleDetail?articleId=";
+			url += articleId;
+			window.open(url);
+		}
+		</script>
 	</body>
 </html>

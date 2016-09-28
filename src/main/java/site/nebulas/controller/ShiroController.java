@@ -108,7 +108,7 @@ public class ShiroController {
 	            model.addAttribute("message", "error");
 	            return "login";
 	        }  
-			return "index";
+			return "exercises";
 		}
 		return "login";
 	}

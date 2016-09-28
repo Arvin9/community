@@ -7,27 +7,14 @@
 				<div class="page-header">
 					<h1>
 						Welcome to 
-						<small>Nebula web site</small>
+						<small>Grocery</small>
 					</h1>
 				</div>
-		
-				<!-- Main component for a primary marketing message or call to action -->
-				<div class="jumbotron">
-					<h1>
-						Hello World
-					</h1>
-					<p>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-							Wherever you are, and whoever you may be, 
-						there is one thing in which you and I are just alike at this monment, 
-						and in all the moments of our existence. 
-						We are not at rest, we are on a journey. 
-						Our life is a movement, a tendency, a steady, ceaseless progress towards an unseen goal.
-					</p>
-					<p>
-						<a class="btn btn-lg btn-primary" href="${ctx}/contact" role="button">Contact me &raquo;</a>
-					</p>
-				</div>
+				<div class="row">
+	        	<div class="col-sm-12" id="showArticle">
+	            </div>
+	        </div>
+				
 			</div>
 			
 			<div class="col-sm-3">
@@ -62,8 +49,43 @@
 	
 	<script>
 	$(function(){
+		$.get( "${ctx}/articleQueryForShow", function(data) {
+			console.log(data);
+			articlePrint(data);
+		});
 		showDailySentence();
 	});
+	
+	function articlePrint(data){
+		
+		$.each(data,function(index,obj){
+			var content = '<div class="panel panel-default">' +
+						  	'<div class="panel-body">' +
+						  		'<div class="row">' +
+							  		'<div class="col-md-8">' +
+							  			'<span class="badge">'+ obj.articlePageView +'</span> &nbsp; <a href="javascript:void(0);" style="font-size:22px;" onclick="articleDetail('+ obj.articleId +')">'+obj.articleCaption+'</a> ' +
+							  		'</div>' +
+							  		'<div class="col-md-4">' +
+							  			'<span class="label label-default">'+ obj.articleUpdateTime +'</span>' +
+							  		'</div>' +
+							  	'</div>' +
+							  	'<div class="row">' +
+						  			'<div class="col-md-8">' +
+						  				'<blockquote><p >'+obj.articleDigest+'</p></blockquote>' +
+						  			'</div>' +
+						  		'</div>' +
+						  	'</div>' +
+						  '</div>';
+			console.log(obj.articleId);
+			$('#showArticle').append(content);
+		});
+	}
+	
+	function articleDetail(articleId){
+		var url = "${ctx}/articleDetail?articleId=";
+		url += articleId;
+		window.open(url);
+	}
 	
 	function showDailySentence(){
 		$.get('getDailySentence', function(data) {
