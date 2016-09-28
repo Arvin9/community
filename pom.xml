@@ -215,7 +215,7 @@
         </dependency>
   </dependencies>
 	<build>
-		<finalName>ssm</finalName>
+		<finalName>community</finalName>
 
 		<plugins>
 			<plugin>

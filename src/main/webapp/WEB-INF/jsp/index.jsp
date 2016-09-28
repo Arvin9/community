@@ -49,7 +49,7 @@
 	
 	<script>
 	$(function(){
-		$.get( "${ctx}/articleQueryForShow", function(data) {
+		$.get( "articleQueryForShow", function(data) {
 			console.log(data);
 			articlePrint(data);
 		});
@@ -82,7 +82,7 @@
 	}
 	
 	function articleDetail(articleId){
-		var url = "${ctx}/articleDetail?articleId=";
+		var url = "articleDetail?articleId=";
 		url += articleId;
 		window.open(url);
 	}

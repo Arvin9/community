@@ -29,19 +29,19 @@
 		
 		function articleLike(articleId){
 			var articleId = articleId;
-			$.post( "${ctx}/articleLike",{articleId:articleId}, function( data ) {
+			$.post( "articleLike",{articleId:articleId}, function( data ) {
 				$('#showArticleDetail').empty();
 				console.log(articleId);
-				$.get( "${ctx}/getArticleDetail",{articleId:articleId}, function( data ) {
+				$.get( "getArticleDetail",{articleId:articleId}, function( data ) {
 					console.log(data);
 					articleDetailPrint(data);
 				});
 			});
 		}
 		function articleDisLike(articleId){
-			$.post( "${ctx}/articleDisLike",{articleId:articleId}, function( data ) {
+			$.post( "articleDisLike",{articleId:articleId}, function( data ) {
 				$('#showArticleDetail').empty();
-				$.get( "${ctx}/getArticleDetail",{articleId:articleId}, function( data ) {
+				$.get( "getArticleDetail",{articleId:articleId}, function( data ) {
 					articleDetailPrint(data);
 				});
 			});
