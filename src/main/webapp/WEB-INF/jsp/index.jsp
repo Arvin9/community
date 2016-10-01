@@ -18,8 +18,14 @@
 			</div>
 			
 			<div class="col-sm-3">
-				<br>
-				<br>
+				<div class="thumbnail">
+			    	<div class="caption">
+			    		<h3 style="text-align:center" id="currentTime">2016-09-28 14:34:33</h3>
+			        	<p>
+			        		<button type="button" class="btn btn-primary btn-lg btn-block">签到</button>
+			        	</p>
+			      	</div>
+			    </div>
 		  		<%-- showDailySentence  --%>
 		  		<div class="thumbnail">
 			    	<img id ="dailySentenceUrl" style="filter:chroma(color=#ffffff)" src="" alt="...">
@@ -54,6 +60,8 @@
 			articlePrint(data);
 		});
 		showDailySentence();
+		//签到模块的当前时间
+		currentTime();
 	});
 	
 	function articlePrint(data){
@@ -108,6 +116,24 @@
 		$.post("dailySentenceDislike", { dailySentenceId: $("#dailySentenceId" ).val()},function(data) {
 			showDailySentence();
 		});
+	}
+	
+	function currentTime(){
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var d = date.getDate();
+		var h = date.getHours();
+		var m = date.getMinutes();
+	    var s = date.getSeconds();
+	    month = month>9?month:('0'+month);
+	    d = d>9?d:('0'+d);
+	    h = h>9?h:('0'+h);
+	    m = m>9?m:('0'+m);
+	    s = s>9?s:('0'+s);
+	    var time = ''+year+'-'+month+'-'+d+' '+h+':'+m+':'+s;
+	    $('#currentTime').html(time);
+	    t = setTimeout(currentTime,1000); //设定定时器，循环执行  	    
 	}
 </script>
 </body>
