@@ -22,7 +22,7 @@
 			    	<div class="caption">
 			    		<h3 style="text-align:center" id="currentTime">2016-09-28 14:34:33</h3>
 			        	<p>
-			        		<button type="button" class="btn btn-primary btn-lg btn-block">签到</button>
+			        		<button type="button" class="btn btn-primary btn-lg btn-block" id="checkInButt" onclick="checkIn()">签到</button>
 			        	</p>
 			      	</div>
 			    </div>
@@ -56,12 +56,19 @@
 	<script>
 	$(function(){
 		$.get( "articleQueryForShow", function(data) {
-			console.log(data);
 			articlePrint(data);
 		});
 		showDailySentence();
+		
 		//签到模块的当前时间
 		currentTime();
+		//查询用户是否签到,已签到则将按钮置灰
+		$.get("isCheckIn", function(data) {
+			console.log(data);
+			if("yes" == data.msg){
+				$('#checkInButt').attr('disabled','disabled'); 
+			}
+		});
 	});
 	
 	function articlePrint(data){
@@ -84,7 +91,6 @@
 						  		'</div>' +
 						  	'</div>' +
 						  '</div>';
-			console.log(obj.articleId);
 			$('#showArticle').append(content);
 		});
 	}
@@ -134,6 +140,34 @@
 	    var time = ''+year+'-'+month+'-'+d+' '+h+':'+m+':'+s;
 	    $('#currentTime').html(time);
 	    t = setTimeout(currentTime,1000); //设定定时器，循环执行  	    
+	}
+	
+	function checkIn(){
+		$.get("isCheckIn", function(data) {
+			if("notLogin" == data.msg){
+				console.log("notLogin");
+				$.messager.confirm('提示', '您还未登陆,是否前往登陆?', function(r){
+					if (!r){
+						window.location.href="login"; 
+					}
+				});
+			}
+			if("yes" == data.msg){
+				$.messager.alert('提示','您已签到过，请勿重新签到!');
+			}
+			if("no" == data.msg){
+				//未签到,执行签到动作
+				$.get("checkIn", function(data) {
+					if("success" == data.msg){
+						$.messager.alert('提示','签到成功!');
+						$('#checkInButt').attr('disabled','disabled');
+					}
+					if("fail" == data.msg){
+						$.messager.alert('提示','签到失败!');
+					}
+				});
+			}
+		});
 	}
 </script>
 </body>

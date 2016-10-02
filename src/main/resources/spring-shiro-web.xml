@@ -112,6 +112,7 @@
                 /resources/** = anon
                 /article* = anon
                 /getArticleDetail = anon
+                /isCheckIn = anon
                 /login = authc
                 /logout = logout
                 /** = user

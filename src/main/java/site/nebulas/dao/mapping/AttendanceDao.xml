@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.nebulas.dao.AttendanceDao">
+
+
+	<select id="queryByParam" resultType="Attendance">
+		select 
+			attendance_id attendanceId,
+			user_account userAccount,
+			attendance_count attendanceCount,
+			attendance_add_time attendanceAddTime,
+			attendance_descr attendanceDescr
+		from attendance
+		<where> 
+			<if test="attendanceId != null">
+				and attendance_id = #{attendanceId}
+			</if>
+			<if test="userAccount !=null and userAccount !='' ">
+				and user_account = #{userAccount}
+			</if>
+			<if test="attendanceCount !=null">
+				and attendance_count = #{attendanceCount}
+			</if>
+			<if test="attendanceAddTime !=null and attendanceAddTime !='' ">
+				and attendance_add_time = #{attendanceAddTime}
+			</if>
+			<if test="attendanceDescr !=null and attendanceDescr !='' ">
+				and attendance_descr = #{attendanceDescr}
+			</if>
+		</where>
+		ORDER BY attendanceAddTime DESC
+	</select>
+
+	<select id="getByAddTime" resultType="Attendance">
+		select 
+			attendance_id attendanceId,
+			user_account userAccount,
+			attendance_count attendanceCount,
+			LEFT(attendance_add_time,10) attendanceAddTime,
+			attendance_descr attendanceDescr
+		from attendance
+		<where> 
+			<if test="attendanceId != null">
+				and attendance_id = #{attendanceId}
+			</if>
+			<if test="userAccount !=null and userAccount !='' ">
+				and user_account = #{userAccount}
+			</if>
+			<if test="attendanceCount !=null">
+				and attendance_count = #{attendanceCount}
+			</if>
+			<if test="attendanceAddTime !=null and attendanceAddTime !='' ">
+				and attendance_add_time like CONCAT(#{attendanceAddTime},'%')
+			</if>
+		</where>
+		ORDER BY attendanceAddTime DESC
+	</select>
+	
+	
+	<insert id="insert">
+		insert into attendance (user_account,attendance_count,attendance_add_time,attendance_descr) 
+		values (#{userAccount},#{attendanceCount},#{attendanceAddTime},#{attendanceDescr})
+	</insert>
+	
+	
+</mapper>

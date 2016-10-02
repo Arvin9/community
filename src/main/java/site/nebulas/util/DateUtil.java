@@ -17,9 +17,6 @@ public class DateUtil {
     public final static String TYPE_DATE = "date";  
     public final static String TYPE_DATETIME = "datetime"; 
 	
-	public static void main(String[] args) {
-		System.out.println(getCurrentSysDate());
-	}
 	/** 
      * 得到当前系统日期 
      * @return YYYY-MM-DD HH:mm:ss
@@ -88,6 +85,20 @@ public class DateUtil {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		return sdf.format(date);
 	}
+	
+	/**
+	 * param : int d 
+	 * return : "2016-09-23"
+	 * */
+	public static String getDate(int d) {
+		Date date = new Date();
+		Calendar calendar  = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		calendar.setTime(date);
+		calendar.add(Calendar.DATE,d);
+		return sdf.format(calendar.getTime());
+	}
+	
 	/**
 	 * 
 	 * return : "2016-09-23 22:19:56"
@@ -97,6 +108,20 @@ public class DateUtil {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return sdf.format(date);
 	}
+	
+	/**
+	 * 
+	 * return : "2016-09-23 22:19:56"
+	 * */
+	public static String getTime(int d) {
+		Date date = new Date();
+		Calendar calendar  = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		calendar.setTime(date);
+		calendar.add(Calendar.DATE,d);
+		return sdf.format(calendar.getTime());
+	}
+	
 	/**
 	 * Param  ： "2016-09-28","2016-10-02"
 	 * return : [2016-09-28, 2016-09-29, 2016-09-30, 2016-10-01, 2016-10-02]
@@ -134,5 +159,9 @@ public class DateUtil {
 		}
 		return list;
 	}
- 
+
+	
+	public static void main(String[] args) {
+		System.out.println(getTime(-2));
+	}
 }

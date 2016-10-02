@@ -51,6 +51,24 @@ public class PageController {
 	@RequestMapping("index")
 	public ModelAndView index(){
 		ModelAndView modelAndView = new ModelAndView("index");
+		Dynamic dynamic = new Dynamic();
+		//获得当前用户名
+		Subject subject = SecurityUtils.getSubject();
+		Session session = subject.getSession();
+		String userAccount = (String)subject.getPrincipal();
+		//插入数据
+		if (null == userAccount){
+			dynamic.setUserAccount("游客");
+		}else{
+			dynamic.setUserAccount(userAccount);
+		}
+		//插入进入客服机器人页面动态
+		dynamic.setDynamicLoginIp(session.getHost());//用户登录ip
+		dynamic.setDynamicContent("进入首页");
+		dynamic.setDynamicAddTime(DateUtil.getCurrentSysDate());//动态发生时间
+		dynamic.setDynamicTyle(6);//6为登陆首页动态
+		dynamicService.insertDynamic(dynamic);
+		
 		return modelAndView;
 	}
 	
