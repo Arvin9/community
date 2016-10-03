@@ -30,17 +30,6 @@
 	<script src="${ctx}/resources/jquery-easyui/jquery.easyui.min.js"></script>
 	<script src="${ctx}/resources/bootstrap-jquery/jquery.bootstrap.min.js"></script>
 	
-	<!-- 百度统计 -->
-	<script>
-		var _hmt = _hmt || [];
-		(function() {
-			var hm = document.createElement("script");
-			hm.src = "//hm.baidu.com/hm.js?ddcc600f99d989c1ea030a9bb9225fdc";
-			var s = document.getElementsByTagName("script")[0]; 
-			s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
-	
 </head>
 <body>
 	<div class="container">
