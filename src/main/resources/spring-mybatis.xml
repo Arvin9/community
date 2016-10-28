@@ -25,13 +25,13 @@
         <property name="username" value="community" />  
         <property name="password" value="community" />  
         <!-- 初始化连接大小 -->  
-        <property name="initialSize" value="0"></property>  
+        <property name="initialSize" value="1"></property>  
         <!-- 连接池最大数量 -->  
         <property name="maxActive" value="20"></property>  
         <!-- 连接池最大空闲 -->  
         <property name="maxIdle" value="20"></property>  
         <!-- 连接池最小空闲 -->  
-        <property name="minIdle" value="0"></property>  
+        <property name="minIdle" value="1"></property>  
         <!-- 获取连接最大等待时间 -->  
         <property name="maxWait" value="60000"></property>  
     </bean>  

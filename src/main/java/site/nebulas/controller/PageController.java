@@ -199,4 +199,16 @@ public class PageController {
 	}
 	
 	
+	/**
+	 * @author CaiHonghui
+	 * @date 20161027
+	 *  模板页面
+	 */
+	@RequestMapping("template")
+	public ModelAndView template(){
+		ModelAndView modelAndView = new ModelAndView("template");
+		return modelAndView;
+	}
+	
+	
 }

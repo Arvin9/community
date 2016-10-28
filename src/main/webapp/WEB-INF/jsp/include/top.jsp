@@ -60,6 +60,9 @@
 						<a href="${ctx}/exercises">练习册</a>
 					</li>
 					<li>
+						<a href="${ctx}/exam">考试</a>
+					</li>
+					<li>
 						<a href="${ctx}/serviceRobot">客服机器人</a>
 					</li>
 					<li>

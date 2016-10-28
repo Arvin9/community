@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.nebulas.dao.ExamDao">
+
+	<select id="getExamList" resultType="Exam">
+		select
+			id id, 
+			name name,
+			begin_time beginTime,
+			end_time endTime,
+			create_time createTime,
+			remake remake
+		from exam
+		ORDER BY begin_time DESC
+	</select>
+	<select id="getExam" resultType="Exam">
+		select
+			id id, 
+			name name,
+			begin_time beginTime,
+			end_time endTime,
+			create_time createTime,
+			remake remake
+		from exam
+		<where> 
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="name !=null and name !='' ">
+				and name = #{name}
+			</if>
+		</where> 
+		ORDER BY begin_time DESC
+	</select>
+
+
+	
+
+</mapper>

@@ -84,7 +84,6 @@
 	</servlet-mapping>
 	<!-- Spring MVC servlet 结束-->
 	
-
 	
 	<welcome-file-list>
 		<welcome-file>/index.jsp</welcome-file>
