@@ -33,7 +33,17 @@
 		ORDER BY begin_time DESC
 	</select>
 
-
+	<select id="getChoiceQuestionList" resultType="ChoiceQuestion">
+		select
+			id id, 
+			question question,
+			choice_1 choice1,
+			choice_2 choice2,
+			choice_3 choice3,
+			choice_4 choice4
+		from choice_question
+		ORDER BY id DESC
+	</select>
 	
 
 </mapper>

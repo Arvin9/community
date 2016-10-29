@@ -43,7 +43,6 @@
 		//参加考试,跳转到考试页面
 		var beginTime;
 		var endTime;
-		alert(id);
 		$.each(examList,function(index,obj){
 			if(obj.id == id){
 				beginTime = obj.beginTime;

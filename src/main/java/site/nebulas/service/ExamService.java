@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import site.nebulas.beans.ChoiceQuestion;
 import site.nebulas.beans.Exam;
 import site.nebulas.beans.MessageBoard;
 import site.nebulas.dao.ExamDao;
@@ -31,4 +32,12 @@ public class ExamService {
 		return examDao.getExam(exam);
 	}
 	
+	/**
+	 * @author CaiHonghui
+	 * @version 0.1
+	 * 20161029 查询选择题
+	 */
+	public List<ChoiceQuestion> getChoiceQuestionList(ChoiceQuestion choiceQuestion){
+		return examDao.getChoiceQuestionList(choiceQuestion);
+	}
 }

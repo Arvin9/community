@@ -160,8 +160,25 @@ public class DateUtil {
 		return list;
 	}
 
+	/**
+	 * //日期格式为 yyyy-MM-dd hh:mm:ss
+	 * 比较两个时间的大小
+	 * 如果previousDate小于later_date返回true,否则返回false
+	 * */
+	public static boolean compareTime(String previousDate,String laterDate){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		try {
+			long previous = sdf.parse(previousDate).getTime();
+			long later = sdf.parse(laterDate).getTime();
+			if(previous < later)
+				return true;				
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 	public static void main(String[] args) {
-		System.out.println(getTime(-2));
+		System.out.println(compareTime("2016-09-23 22:19:56","2016-09-23 22:19:55"));
 	}
 }
