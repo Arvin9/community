@@ -2,6 +2,7 @@ package site.nebulas.beans;
 
 public class ChoiceQuestion {
 	private Integer id;
+	private Integer examId;
 	private String question;
 	private String choice1;
 	private String choice2;
@@ -13,6 +14,12 @@ public class ChoiceQuestion {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public Integer getExamId() {
+		return examId;
+	}
+	public void setExamId(Integer examId) {
+		this.examId = examId;
 	}
 	public String getQuestion() {
 		return question;

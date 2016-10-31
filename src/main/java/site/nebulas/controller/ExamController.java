@@ -13,6 +13,8 @@ import com.alibaba.fastjson.JSON;
 
 import site.nebulas.beans.ChoiceQuestion;
 import site.nebulas.beans.Exam;
+import site.nebulas.beans.JudgeQuestion;
+import site.nebulas.beans.ProgramQuestion;
 import site.nebulas.service.ExamService;
 import site.nebulas.util.DateUtil;
 
@@ -82,7 +84,20 @@ public class ExamController {
 			return "exam";
 		}
 		
-		model.addAttribute("choiceQuestionList", JSON.toJSON(examService.getChoiceQuestionList(null)));
+		//传递考试结束时间
+		model.addAttribute("examEndTime", tempExam.getEndTime());
+		//传递选择题列表
+		ChoiceQuestion choiceQuestion = new ChoiceQuestion();
+		choiceQuestion.setExamId(tempExam.getId());
+		model.addAttribute("choiceQuestionList", JSON.toJSON(examService.getChoiceQuestionList(choiceQuestion)));
+		//传递判断题列表
+		JudgeQuestion judgeQuestion = new JudgeQuestion();
+		judgeQuestion.setExamId(tempExam.getId());
+		model.addAttribute("judgeQuestionList", JSON.toJSON(examService.getJudgeQuestionList(judgeQuestion)));
+		//传递程序题列表
+		ProgramQuestion programQuestion = new ProgramQuestion();
+		programQuestion.setExamId(tempExam.getId());
+		model.addAttribute("programQuestionList", JSON.toJSON(examService.getProgramQuestionList(programQuestion)));
 		return "questions";
 	}
 	

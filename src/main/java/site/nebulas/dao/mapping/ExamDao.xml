@@ -42,8 +42,47 @@
 			choice_3 choice3,
 			choice_4 choice4
 		from choice_question
+		<where> 
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="examId != null and examId != ''">
+				and exam_id = #{examId}
+			</if>
+		</where> 
 		ORDER BY id DESC
 	</select>
 	
+	<select id="getJudgeQuestionList" resultType="JudgeQuestion">
+		select
+			id id, 
+			question question
+		from judge_question
+		<where> 
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="examId != null and examId != ''">
+				and exam_id = #{examId}
+			</if>
+		</where> 
+		ORDER BY id DESC
+	</select>
+	
+	<select id="getProgramQuestionList" resultType="ProgramQuestion">
+		select
+			id id, 
+			question question
+		from program_question
+		<where> 
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="examId != null and examId != ''">
+				and exam_id = #{examId}
+			</if>
+		</where> 
+		ORDER BY id DESC
+	</select>
 
 </mapper>

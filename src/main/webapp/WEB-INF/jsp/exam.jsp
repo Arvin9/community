@@ -118,7 +118,6 @@
 		return ''+mm+':'+ss; 
 	}
 	function timer(){
-		console.log(1);
 		detectionExam();
 		setTimeout(timer,1000);
 	}

@@ -4,12 +4,11 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
-
 import site.nebulas.beans.ChoiceQuestion;
 import site.nebulas.beans.Exam;
-import site.nebulas.beans.MessageBoard;
+import site.nebulas.beans.JudgeQuestion;
+import site.nebulas.beans.ProgramQuestion;
 import site.nebulas.dao.ExamDao;
-import site.nebulas.dao.MessageBoardDao;
 @Service
 public class ExamService {
 	@Resource
@@ -35,9 +34,27 @@ public class ExamService {
 	/**
 	 * @author CaiHonghui
 	 * @version 0.1
-	 * 20161029 查询选择题
+	 * 20161029 获取选择题列表
 	 */
 	public List<ChoiceQuestion> getChoiceQuestionList(ChoiceQuestion choiceQuestion){
 		return examDao.getChoiceQuestionList(choiceQuestion);
+	}
+	
+	/**
+	 * @author CaiHonghui
+	 * @version 0.1
+	 * 20161031 获取判断题列表
+	 */
+	public List<JudgeQuestion> getJudgeQuestionList(JudgeQuestion judgeQuestion){
+		return examDao.getJudgeQuestionList(judgeQuestion);
+	}
+	
+	/**
+	 * @author CaiHonghui
+	 * @version 0.1
+	 * 20161031 获取程序题列表
+	 */
+	public List<ProgramQuestion> getProgramQuestionList(ProgramQuestion programQuestion){
+		return examDao.getProgramQuestionList(programQuestion);
 	}
 }
