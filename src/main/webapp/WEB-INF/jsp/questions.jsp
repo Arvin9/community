@@ -145,21 +145,7 @@
 	function countDown(){
 		var currentDate = new Date();
 		currentDate = currentDate.getTime();
-		
-		/*
-		var year = date.getFullYear();
-		var month = date.getMonth()+1;
-		var d = date.getDate();
-		var h = date.getHours();
-		var m = date.getMinutes();
-	    var s = date.getSeconds();
-	    month = month>9?month:('0'+month);
-	    d = d>9?d:('0'+d);
-	    h = h>9?h:('0'+h);
-	    m = m>9?m:('0'+m);
-	    s = s>9?s:('0'+s);
-	    var time = ''+year+'-'+month+'-'+d+' '+h+':'+m+':'+s;
-	    */
+
 	    var time = Math.ceil((examEndTime - currentDate)/1000);
 	    if (time < 0){
 	    	console.log("时间结束");

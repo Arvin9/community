@@ -64,7 +64,6 @@
 		currentTime();
 		//查询用户是否签到,已签到则将按钮置灰
 		$.get("isCheckIn", function(data) {
-			console.log(data);
 			if("yes" == data.msg){
 				$('#checkInButt').attr('disabled','disabled'); 
 			}

@@ -43,14 +43,21 @@
 		//参加考试,跳转到考试页面
 		var beginTime;
 		var endTime;
+		var now_date = new Date();
+		now_date = now_date.getTime();
+		
 		$.each(examList,function(index,obj){
 			if(obj.id == id){
 				beginTime = obj.beginTime;
 				endTime = obj.endTime;
 			}
 		});
-		console.log(beginTime);
-		console.log(endTime);
+		if(compareTime(now_date,beginTime) || !compareTime(now_date,endTime)){
+			//如果当前时间小于考试开始时间或者大于考试结束时间,返回考试页面
+			console.log(endTime);
+			$.messager.alert('提示','非正常考试时间,请确认后重试!');
+			return;
+		}
 		var url = "${ctx}/takeExam?id=";
 		url += id;
 		window.location.href = url;
@@ -88,7 +95,6 @@
 					button = 'butt_' + obj.id;
 					$('#'+button).text("考试结束");
 					$('#'+button).attr('disabled','disabled');
-					 
 				}
 			}
 		});
@@ -101,7 +107,7 @@
 		//previous_date = new Date(Date.parse(previous_date.replace(/-/g, "/")));
 		//previous_date = previous_date.getTime();
 		
-		later_date = new Date(Date.parse(later_date.replace(/-/g, "/")));
+		later_date = new Date(Date.parse(later_date.toString().replace(/-/g, "/")));
 		later_date = later_date.getTime();
 		
 		if(previous_date < later_date)
@@ -113,9 +119,12 @@
 	function formatTime(time){
 		time = Math.ceil(time/1000);
 		var ss = time % 60;
-		var mm = Math.floor(time/60);
 		ss = ss<10?('0'+ss):ss;
-		return ''+mm+':'+ss; 
+		time = Math.floor(time/60);
+		var mm = time % 60;
+		mm = mm<10?('0'+mm):mm;
+		var hh = Math.floor(time/60);
+		return ''+hh+':'+mm+':'+ss; 
 	}
 	function timer(){
 		detectionExam();
