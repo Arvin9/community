@@ -46,7 +46,7 @@
 			<if test="id != null">
 				and id = #{id}
 			</if>
-			<if test="examId != null and examId != ''">
+			<if test="examId != null">
 				and exam_id = #{examId}
 			</if>
 		</where> 
@@ -62,7 +62,7 @@
 			<if test="id != null">
 				and id = #{id}
 			</if>
-			<if test="examId != null and examId != ''">
+			<if test="examId != null">
 				and exam_id = #{examId}
 			</if>
 		</where> 
@@ -78,11 +78,52 @@
 			<if test="id != null">
 				and id = #{id}
 			</if>
-			<if test="examId != null and examId != ''">
+			<if test="examId != null">
 				and exam_id = #{examId}
 			</if>
 		</where> 
 		ORDER BY id DESC
 	</select>
-
+	
+	<select id="queryExamRecord" resultType="ExamRecord">
+		select
+			id id, 
+			exam_id examId,
+			user_account userAccount
+		from exam_record
+		<where> 
+			<if test="examId != null">
+				and exam_id = #{examId}
+			</if>
+			<if test="userAccount != null and userAccount != ''">
+				and user_account = #{userAccount}
+			</if>
+		</where> 
+		ORDER BY id DESC
+	</select>
+	
+	<insert id="insertExamRecord">
+		insert into exam_record (exam_id,user_account,create_time,choice_score,judge_score,program_score,total_score) 
+		values (#{examId},#{userAccount},#{createTime},#{choiceScore},#{judgeScore},#{programScore},#{totalScore})
+	</insert>
+	
+	<update id="updateExamRecord">
+		update exam_record
+		<set>
+			<if test="choiceScore != null">
+				choice_score = #{choiceScore},
+			</if>
+			<if test="judgeScore != null">
+				judge_score = #{judgeScore},
+			</if>
+			<if test="programScore != null">
+				program_score = #{programScore},
+			</if>
+			<if test="totalScore != null">
+				total_score = #{totalScore},
+			</if>
+		</set>
+		where exam_id = #{examId}
+		and user_account = #{userAccount}
+	</update>
 </mapper>
