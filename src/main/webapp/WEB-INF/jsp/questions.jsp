@@ -14,7 +14,7 @@
 	    	<ul class="media-list list-group" id="choiceQuestionShow">
 			 
 		  	</ul>
-		  	<button type="button" class="btn btn-primary" onclick="choiceSave()">保存</button>
+		  	<button type="button" class="btn btn-primary" onclick="submitAnswer()">保存</button>
 	    </div>
 	    
 	    <div id="judge" class="tab-pane fade">
@@ -56,7 +56,11 @@
 		programQuestionPrint(programQuestionList);
 	});
 	
-	function choiceSave(){
+	function submitAnswer(){
+		/**
+		 * to do
+		 * 如果有空答案,提醒	 
+		 */
 		var choiceAnswer = new Array();
 		var judgeAnswer = new Array();
 		var programAnswer = new Array();
