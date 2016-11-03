@@ -8,7 +8,7 @@ public class ChoiceQuestion {
 	private String choice2;
 	private String choice3;
 	private String choice4;
-	private String result;
+	private Integer result;
 	public Integer getId() {
 		return id;
 	}
@@ -51,10 +51,10 @@ public class ChoiceQuestion {
 	public void setChoice4(String choice4) {
 		this.choice4 = choice4;
 	}
-	public String getResult() {
+	public Integer getResult() {
 		return result;
 	}
-	public void setResult(String result) {
+	public void setResult(Integer result) {
 		this.result = result;
 	}
 	

@@ -89,4 +89,22 @@ public class ExamService {
 	public void updateExamRecord(ExamRecord examRecord){
 		examDao.updateExamRecord(examRecord);
 	}
+	
+	/**
+	 * @author CaiHonghui
+	 * @version 0.1
+	 * 20161103 核对选择题答案
+	 * @param 
+	 * */
+	public boolean verifyChoiceAnswer(Integer id,Integer answer){
+		ChoiceQuestion choiceQuestion = new ChoiceQuestion();
+		choiceQuestion.setId(id);
+		choiceQuestion = examDao.getChoiceQuestion(choiceQuestion);
+		if(choiceQuestion.getResult().equals(answer)){
+			return true;
+		}
+		return false;
+	}
+	
+	
 }

@@ -18,6 +18,10 @@ public interface ExamDao {
 	 * */
 	public List<ChoiceQuestion> getChoiceQuestionList(ChoiceQuestion choiceQuestion);
 	/**
+	 * 获取选择题
+	 * */
+	public ChoiceQuestion getChoiceQuestion(ChoiceQuestion choiceQuestion);
+	/**
 	 * 获取判断题列表
 	 * */
 	public List<JudgeQuestion> getJudgeQuestionList(JudgeQuestion judgeQuestion);

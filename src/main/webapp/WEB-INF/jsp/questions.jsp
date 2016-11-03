@@ -42,6 +42,7 @@
 	var choiceQuestionList = ${choiceQuestionList};
 	var judgeQuestionList = ${judgeQuestionList};
 	var programQuestionList = ${programQuestionList};
+	var examId = ${examId};
 	var examEndTime = "${examEndTime}";
 	
 	var timerHandle;
@@ -57,16 +58,36 @@
 	
 	function choiceSave(){
 		var choiceAnswer = new Array();
+		var judgeAnswer = new Array();
+		var programAnswer = new Array();
 		
 		$.each(choiceQuestionList,function(index,obj){
 			var choice = new Object();
-			var item = $('input[name="optionsRadios_' + obj.id +'"]:checked').val();
+			var item = $('input[name="choiceRadios_' + obj.id +'"]:checked').val();
 			choice.id = obj.id;
 			choice.answer = item;
 			choiceAnswer.push(choice);
-	
 		});
-		console.log(choiceAnswer);
+		$.each(judgeQuestionList,function(index,obj){
+			var judge = new Object();
+			var item = $('input[name="judgeRadios_' + obj.id +'"]:checked').val();
+			judge.id = obj.id;
+			judge.answer = item;
+			judgeAnswer.push(judge);
+		});
+		$.each(programQuestionList,function(index,obj){
+			var program = new Object();
+			var item = $('#programAnswer_' + obj.id +'').val();
+			program.id = obj.id;
+			program.answer = item;
+			programAnswer.push(program);
+		});
+		console.log(JSON.stringify(choiceAnswer));
+		console.log(judgeAnswer);
+		console.log(programAnswer);
+		$.post('submitAnswer',{examId:examId,choiceAnswer:JSON.stringify(choiceAnswer)},function(data){
+			console.log(data);
+		});
 	}
 	
 	function programQuestionPrint(data){
@@ -75,7 +96,7 @@
 			var content = '<li class="media list-group-item">'+
 	   	 						'<div class="media-body">'+
       								'<h4 class="media-heading">'+ index + '、' + obj.question + '</h4>'+
-            						'<textarea class="form-control" rows="10" style="width:100%"></textarea>'+
+            						'<textarea class="form-control" id="programAnswer_'+ obj.id +'" rows="10" style="width:100%"></textarea>'+
 								'</div>'+
      						'</li>';
 			$('#programQuestionShow').append(content);
@@ -90,13 +111,13 @@
       								'<h4 class="media-heading">'+ index + '、' + obj.question + '</h4>'+
             						'<div class="radio">'+
 										'<label>'+
-											'<input type="radio" name="optionsRadios_'+ obj.id +'" value="1" >'+
+											'<input type="radio" name="judgeRadios_'+ obj.id +'" value="1" >'+
 			    								'对' +
 			  							'</label>'+
 									'</div>'+
 									'<div class="radio">'+
 										'<label>'+
-			    							'<input type="radio" name="optionsRadios_'+ obj.id +'" value="0">'+
+			    							'<input type="radio" name="judgeRadios_'+ obj.id +'" value="0">'+
 			    								'错' +
 			  							'</label>'+
 									'</div>'+
@@ -114,25 +135,25 @@
       								'<h4 class="media-heading">'+ index + '、' + obj.question + '</h4>'+
             						'<div class="radio">'+
 										'<label>'+
-											'<input type="radio" name="optionsRadios_'+ obj.id +'" value="1" >'+
+											'<input type="radio" name="choiceRadios_'+ obj.id +'" value="1" >'+
 			    								obj.choice1 +
 			  							'</label>'+
 									'</div>'+
 									'<div class="radio">'+
 										'<label>'+
-			    							'<input type="radio" name="optionsRadios_'+ obj.id +'" value="2">'+
+			    							'<input type="radio" name="choiceRadios_'+ obj.id +'" value="2">'+
 			    								obj.choice2 +
 			  							'</label>'+
 									'</div>'+
 									'<div class="radio">'+
 										'<label>'+
-											'<input type="radio" name="optionsRadios_'+ obj.id +'" value="3">'+
+											'<input type="radio" name="choiceRadios_'+ obj.id +'" value="3">'+
 												obj.choice3 +
 			  							'</label>'+
 									'</div>'+
 									'<div class="radio">'+
 										'<label>'+
-											'<input type="radio" name="optionsRadios_'+ obj.id +'" value="4">'+
+											'<input type="radio" name="choiceRadios_'+ obj.id +'" value="4">'+
 												obj.choice4 +
 			  							'</label>'+
 									'</div>'+

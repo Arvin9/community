@@ -53,6 +53,18 @@
 		ORDER BY id DESC
 	</select>
 	
+	<select id="getChoiceQuestion" resultType="ChoiceQuestion">
+		select
+			id id, 
+			result result
+		from choice_question
+		<where> 
+			<if test="id != null">
+				and id = #{id}
+			</if>
+		</where> 
+	</select>
+	
 	<select id="getJudgeQuestionList" resultType="JudgeQuestion">
 		select
 			id id, 
@@ -103,8 +115,8 @@
 	</select>
 	
 	<insert id="insertExamRecord">
-		insert into exam_record (exam_id,user_account,create_time,choice_score,judge_score,program_score,total_score) 
-		values (#{examId},#{userAccount},#{createTime},#{choiceScore},#{judgeScore},#{programScore},#{totalScore})
+		insert into exam_record (exam_id,user_account,create_time) 
+		values (#{examId},#{userAccount},#{createTime})
 	</insert>
 	
 	<update id="updateExamRecord">
