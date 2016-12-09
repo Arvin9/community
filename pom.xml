@@ -237,7 +237,14 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.3.14.v20161028</version>
+			</plugin>
 		</plugins>
+
 
 	</build>
 </project>
