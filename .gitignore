@@ -5,3 +5,8 @@
 *.log*
 *logs/
 *bin/
+
+*target/
+.idea/
+lib/
+*.iml
